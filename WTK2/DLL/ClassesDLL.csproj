@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{635761E3-6C8F-43DB-9F92-E44E112078D2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WinToolkitDLL</RootNamespace>
+    <AssemblyName>WinToolkitDLL</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>ExtendedDesignGuidelineRules.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <CodeAnalysisIgnoreGeneratedCode>true</CodeAnalysisIgnoreGeneratedCode>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <NoWarn>1607</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\WinToolkitDLL.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>
+    </ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Main.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Windows.Controls.Ribbon" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Commands\Misc.cs" />
+    <Compile Include="ExitCodes.cs" />
+    <Compile Include="Extensions\Controls.cs" />
+    <Compile Include="Extensions\Numbers.cs" />
+    <Compile Include="Extensions\Strings.cs" />
+    <Compile Include="Commands\FileHandling\CopyDirectory.cs" />
+    <Compile Include="Commands\FileHandling\_Task.cs" />
+    <Compile Include="DISM.cs" />
+    <Compile Include="Extensions\Windows.cs" />
+    <Compile Include="Objects\Integratables\Addon.cs" />
+    <Compile Include="Objects\Integratables\Driver.cs" />
+    <Compile Include="Objects\Integratables\Files.cs" />
+    <Compile Include="Objects\Integratables\Gadget.cs" />
+    <Compile Include="Objects\Integratables\RegFile.cs" />
+    <Compile Include="Objects\Integratables\Theme.cs" />
+    <Compile Include="Objects\Integratables\Updates\UpdateCAB.cs" />
+    <Compile Include="Objects\Integratables\Updates\UpdateMSU.cs" />
+    <Compile Include="Objects\USBDrive.cs" />
+    <Compile Include="Objects\Integratables\Wallpaper.cs" />
+    <Compile Include="Objects\WimImage\RegistryMount.cs" />
+    <Compile Include="Objects\WimImage\Wim.cs" />
+    <Compile Include="ThirdParty\BurnHelper.cs" />
+    <Compile Include="ThirdParty\FileDiscFormatData.cs" />
+    <Compile Include="ThirdParty\ImageRepository.cs" />
+    <Compile Include="ThirdParty\Interop.cs" />
+    <Compile Include="ThirdParty\ISO.cs" />
+    <Compile Include="ThirdParty\UniqueListFileSystemInfo.cs" />
+    <Compile Include="UpdateCache.cs" />
+    <Compile Include="ThirdParty\NativeMethods.cs" />
+    <Compile Include="Objects\Integratables\Office.cs" />
+    <Compile Include="Objects\Integratables\LangPack.cs" />
+    <Compile Include="Objects\Integratables\Updates\_Update.cs" />
+    <Compile Include="Objects\Integratables\_Integratable.cs" />
+    <Compile Include="Commands\Extraction.cs" />
+    <Compile Include="Commands\Hex.cs" />
+    <Compile Include="Commands\FileHandling.cs" />
+    <Compile Include="Commands\Reg.cs" />
+    <Compile Include="Commands\Processes.cs" />
+    <Compile Include="Events.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ThirdParty\RibbonWindowFixer.cs" />
+    <Compile Include="OS.cs" />
+    <Compile Include="Enum.cs" />
+    <Compile Include="Global.cs" />
+    <Compile Include="Options.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Objects\WimImage\MountedImage.cs" />
+    <Compile Include="Objects\WimImage\WimImage.cs" />
+    <Compile Include="Objects\WimImage\_WimImage.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Main.pfx" />
+    <None Include="Resources\BIOS.com" />
+    <None Include="Resources\exe2cab.exe" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folder_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\File_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\process_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Objects\Integrated\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\publicKey.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Imaging\DISM\Microsoft.Dism.csproj">
+      <Project>{e6831090-f1c2-4619-9ab2-01d29272357a}</Project>
+      <Name>Microsoft.Dism</Name>
+    </ProjectReference>
+    <ProjectReference Include="Imaging\Microsoft.Wim\Microsoft.Wim.csproj">
+      <Project>{2d098368-e3de-4c16-b5bd-6223a6476483}</Project>
+      <Name>Microsoft.Wim</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

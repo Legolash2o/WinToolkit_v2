@@ -1,0 +1,87 @@
+﻿<Window x:Class="WinToolkitv2.frmOptions"
+              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+              xmlns:winToolkitDll1="clr-namespace:WinToolkitDLL;assembly=WinToolkitDLL"
+              Title="{DynamicResource FrmOptions-00000000}" Height="400" Width="600"
+              WindowStartupLocation="CenterScreen"
+              ResizeMode="NoResize"
+              Icon="/Images/Options/Options_32.png"
+        Loaded="FrmOptions_OnLoaded">
+    <Window.Resources>
+        <winToolkitDll1:Options x:Key="Options" />
+    </Window.Resources>
+    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Ribbon Grid.Row="0" Loaded="FrameworkElement_OnLoaded">
+            <Ribbon.ApplicationMenu>
+                <RibbonApplicationMenu Visibility="Collapsed" />
+            </Ribbon.ApplicationMenu>
+            <RibbonTab Header="{DynamicResource Global-00000036}">
+                <RibbonGroup Header="{DynamicResource Global-00000042}">
+                    <RibbonButton x:Name="btnSaveSettings" IsEnabled="False"
+                                  Label="{DynamicResource FrmOptions-00000002}"
+                                  LargeImageSource="Images/Options/Save_32.png" Click="BtnSaveSettings_OnClick" />
+                    <RibbonButton x:Name="btnDefault" Label="{DynamicResource FrmOptions-00000003}"
+                                  LargeImageSource="Images/Options/Reset_32.png" Click="BtnDefault_OnClick"
+                                  ToolTipTitle="{DynamicResource FrmOptions-00000003}"
+                                  ToolTipDescription="{DynamicResource FrmOptions-00000014}"
+                                  ToolTipFooterImageSource="/Images/_Global/Warning_25.png"
+                                  ToolTipFooterTitle="{DynamicResource FrmOptions-00000015}" />
+                </RibbonGroup>
+            </RibbonTab>
+        </Ribbon>
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+            <StackPanel CanVerticallyScroll="True">
+                <Expander Header="{DynamicResource FrmOptions-00000011}" IsExpanded="True">
+                    <Border BorderThickness="1" BorderBrush="LightGray" CornerRadius="3">
+                        <Grid Margin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <StackPanel Grid.Column="0">
+                                <Label Content="{DynamicResource FrmOptions-00000012}" />
+                            </StackPanel>
+                            <StackPanel Grid.Column="1">
+                                <ComboBox x:Name="cboMaxThreads" ToolTip="{DynamicResource FrmOptions-00000013}"
+                                          SelectedValue="{Binding Source={StaticResource Options}, Path=CurrentOptions.MaxThreads}" />
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+                </Expander>
+                <Expander Header="{DynamicResource FrmOptions-00000010}" IsExpanded="True">
+                    <Border BorderThickness="1" BorderBrush="LightGray" CornerRadius="3">
+                        <Grid Margin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <StackPanel Grid.Column="0">
+                                <CheckBox Content="{DynamicResource FrmOptions-00000004}"
+                                          IsChecked="{Binding Source={StaticResource Options}, Path=CurrentOptions.MainMenuAutoHeight}"
+                                          ToolTip="{DynamicResource FrmOptions-00000005}" />
+                            </StackPanel>
+                            <StackPanel Grid.Column="1">
+                                <CheckBox Content="{DynamicResource FrmOptions-00000006}"
+                                          IsChecked="{Binding Source={StaticResource Options}, Path=CurrentOptions.MainMenuAutoWidth}"
+                                          ToolTip="{DynamicResource FrmOptions-00000007}" />
+                            </StackPanel>
+                            <StackPanel Grid.Column="2">
+                                <CheckBox Content="{DynamicResource FrmMain-00000036}"
+                                          IsChecked="{Binding Source={StaticResource Options}, Path=CurrentOptions.MainMenuAdvanced}"
+                                          ToolTip="{DynamicResource FrmOptions-00000009}" />
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+                </Expander>
+            </StackPanel>
+
+        </ScrollViewer>
+    </Grid>
+</Window>

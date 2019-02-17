@@ -1,0 +1,3140 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.Wim</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.Wim.WimApplyImageOptions">
+            <summary>
+                Specifies options when applying an image.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimApplyImageOptions.FileInfo">
+            <summary>
+                Sends a WIM_MSG_FILEINFO message during the apply operation.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimApplyImageOptions.Index">
+            <summary>
+                Specifies that the image is to be sequentially read for caching or performance purposes.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimApplyImageOptions.NoApply">
+            <summary>
+                Applies the image without physically creating directories or files. Useful for obtaining a list of files and
+                directories in the image.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimApplyImageOptions.None">
+            <summary>
+                No options are set.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimApplyImageOptions.DisableDirectoryAcl">
+            <summary>
+                Disables restoring security information for directories.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimApplyImageOptions.DisableFileAcl">
+            <summary>
+                Disables restoring security information for files
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimApplyImageOptions.DisableRPFix">
+            <summary>
+                Disables automatic path fixups for junctions and symbolic links.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimApplyImageOptions.Verify">
+            <summary>
+                Verifies that files match original data.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Wim.WimCaptureImageOptions">
+            <summary>
+                Specifies options when capturing an image.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimCaptureImageOptions.DisableDirectoryAcl">
+            <summary>
+                Disables capturing security information for directories.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimCaptureImageOptions.DisableFileAcl">
+            <summary>
+                Disables capturing security information for files.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimCaptureImageOptions.DisableRPFix">
+            <summary>
+                Disables automatic path fix-ups for junctions and symbolic links.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimCaptureImageOptions.None">
+            <summary>
+                No options are set.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimCaptureImageOptions.Verify">
+            <summary>
+                Capture verifies single-instance files byte by byte.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Wim.WimCommitImageOptions">
+            <summary>
+                Specifies options when committing an image.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimCommitImageOptions.DisableDirectoryAcl">
+            <summary>
+                Disables capturing security information for directories.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimCommitImageOptions.DisableFileAcl">
+            <summary>
+                Disables capturing security information for files.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimCommitImageOptions.DisableRPFix">
+            <summary>
+                Disables automatic path repairs for junctions and symbolic links.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimCommitImageOptions.None">
+            <summary>
+                No options are set.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimCommitImageOptions.Verify">
+            <summary>
+                Capture verifies single-instance files byte by byte.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Wim.WimCompressionType">
+            <summary>
+                Represents the compression mode to be used for a newly created image file.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimCompressionType.Lzms">
+            <summary>
+                Capture uses LZMS file compression.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimCompressionType.Lzx">
+            <summary>
+                Capture uses LZX file compression.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimCompressionType.None">
+            <summary>
+                Capture does not use file compression.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimCompressionType.Xpress">
+            <summary>
+                Capture uses XPRESS file compression.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Wim.WimCopyFileOptions">
+            <summary>
+                Specifies options when copying a file from an image.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimCopyFileOptions.FailIfExists">
+            <summary>
+                The copy operation fails immediately if the target file already exists.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimCopyFileOptions.None">
+            <summary>
+                No options are set.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimCopyFileOptions.Retry">
+            <summary>
+                Automatically retries copy operations in event of failures.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Wim.WimCreateFileOptions">
+            <summary>
+                Specifies options when creating a .wim file.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimCreateFileOptions.None">
+            <summary>
+                No options are set.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimCreateFileOptions.ShareWrite">
+            <summary>
+                Opens the .wim file in a mode that enables simultaneous reading and writing.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimCreateFileOptions.Verify">
+            <summary>
+                Generates data integrity information for new files. Verifies and updates existing files.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Wim.WimCreationDisposition">
+            <summary>
+                Specifies which action to take when creating .wim and the file exists, and which action to take when file does not
+                exist.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimCreationDisposition.CreateAlways">
+            <summary>
+                Makes a new image file. If the file exists, the function overwrites the file.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimCreationDisposition.CreateNew">
+            <summary>
+                Makes a new image file. If the specified file already exists, the function fails.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimCreationDisposition.OpenAlways">
+            <summary>
+                Opens the image file if it exists. If the file does not exist and the caller requests
+                <see cref="F:Microsoft.Wim.WimFileAccess.Write" /> access, the function makes the file.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimCreationDisposition.OpenExisting">
+            <summary>
+                Opens the image file. If the file does not exist, the function fails.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Wim.WimCreationResult">
+            <summary>
+                Represents the result of creating an image.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimCreationResult.CreatedNew">
+            <summary>
+                The file did not exist and was created.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimCreationResult.OpenedExisting">
+            <summary>
+                The file existed and was opened for access.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Wim.WimExportImageOptions">
+            <summary>
+                Specifies options when exporting an image.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimExportImageOptions.AllowDuplicates">
+            <summary>
+                The image will be exported to the destination .wim file even if it is already stored in that .wim file.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimExportImageOptions.MetadataOnly">
+            <summary>
+                Image resources and XML information are exported to the destination .wim file and no supporting file resources are
+                included.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimExportImageOptions.None">
+            <summary>
+                No options are set.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimExportImageOptions.ResourcesOnly">
+            <summary>
+                File resources will be exported to the destination .wim file and no image resources or XML information will be
+                included.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Wim.WimFileAccess">
+            <summary>
+                Defines constants for read, write, or mount access to a .wim file.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimFileAccess.Mount">
+            <summary>
+                Specifies mount access to the image file.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimFileAccess.Query">
+            <summary>
+                Specifies query access to the file. An application can query image information without accessing the images.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimFileAccess.Read">
+            <summary>
+                Specifies read-only access to the image file. Enables images to be applied from the file. Combine with
+                WimFileAccess.Write for read/write (append) access.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimFileAccess.Write">
+            <summary>
+                Specifies write access to the image file. Enables images to be captured to the file. Includes WimFileAccess.Read
+                access to enable apply and append operations with existing images.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Wim.WimInfoAttributes">
+            <summary>
+                Specifies how a .wim file is treated and what features will be used.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimInfoAttributes.MetadataOnly">
+            <summary>
+                The .wim file only contains image resources and XML information.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimInfoAttributes.Normal">
+            <summary>
+                The .wim file does not have any other attributes set.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimInfoAttributes.ReadOnly">
+            <summary>
+                The .wim file is locked and cannot be modified.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimInfoAttributes.ResourceOnly">
+            <summary>
+                The .wim file only contains file resources and no images or metadata.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimInfoAttributes.RPFix">
+            <summary>
+                The .wim file contains one or more images where symbolic link or junction path fix-up is enabled.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimInfoAttributes.Spanned">
+            <summary>
+                The .wim file has been split into multiple pieces by the <see cref="M:Microsoft.Wim.WimgApi.SplitFile(Microsoft.Wim.WimHandle,System.String,System.Int64)" />
+                method.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimInfoAttributes.VerifyData">
+            <summary>
+                The .wim file contains integrity data that can be used by the
+                <see cref="M:Microsoft.Wim.WimgApi.CopyFile(System.String,System.String,Microsoft.Wim.WimCopyFileOptions)" /> or <see cref="M:Microsoft.Wim.WimgApi.CreateFile(System.String,Microsoft.Wim.WimFileAccess,Microsoft.Wim.WimCreationDisposition,Microsoft.Wim.WimCreateFileOptions,Microsoft.Wim.WimCompressionType)" /> method.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Wim.WimMessageResult">
+            <summary>
+                Specifies the result of a WimMessageCallback.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimMessageResult.Abort">
+            <summary>
+                Cancels an image apply or image capture.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimMessageResult.Done">
+            <summary>
+                Indicates success and prevents other subscribers from receiving the message.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimMessageResult.SkipError">
+            <summary>
+                Indicates the error can be ignored and the imaging operation continues.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimMessageResult.Success">
+            <summary>
+                Indicate success and to enable other subscribers to process the message
+            </summary>
+        </member>
+        <member name="T:Microsoft.Wim.WimMessageType">
+            <summary>
+                Specifies the type of message sent to the WIMMessageCallback.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimMessageType.None">
+            <summary>
+                Base message value.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimMessageType.Text">
+            <summary>
+                Sent to the WIMMessageCallback function in debug builds with text messages containing status and error information.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimMessageType.Progress">
+            <summary>
+                Sent to a WIMMessageCallback function to indicate an update in the progress of an image application.
+            </summary>
+            <remarks>
+                Progress estimates typically increase during the early stages of an image apply and later decrease, so the
+                calling process must handle this as appropriate.
+            </remarks>
+        </member>
+        <member name="F:Microsoft.Wim.WimMessageType.Process">
+            <summary>
+                Sent to a WIMMessageCallback function to enable the caller to prevent a file or a directory from being captured or
+                applied.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimMessageType.Scanning">
+            <summary>
+                Sent to a WIMMessageCallback function to indicate that volume information is gathered during an image capture.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimMessageType.SetRange">
+            <summary>
+                Sent to a WIMMessageCallback function to indicate the number of files to capture or to apply.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimMessageType.SetPosition">
+            <summary>
+                Sent to a WIMMessageCallback function to indicate the number of files that were captured or applied.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimMessageType.StepIt">
+            <summary>
+                Sent to the WIMMessageCallback function to indicate that a file was either captured or applied.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimMessageType.Compress">
+            <summary>
+                Sent to the WIMMessageCallback function to enable the caller to prevent a file resource from being compressed
+                during a capture.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimMessageType.Error">
+            <summary>
+                Sent to a WIMMessageCallback function to alert the caller that an error occurred while capturing or applying an
+                image.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimMessageType.Alignment">
+            <summary>
+                Sent to a WIMMessageCallback function to enable the caller to align a file resource on a particular alignment
+                boundary.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimMessageType.Retry">
+            <summary>
+                Sent to a WIMMessageCallback function when an I/O error occurs during a WIMApplyImage operation.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimMessageType.Split">
+            <summary>
+                Sent to a WIMMessageCallback function to enable the caller to change the size or the name of a piece of a split
+                Windows® image (.wim) file.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimMessageType.FileInfo">
+            <summary>
+                Sent to a WIMMessageCallback function to provide the caller with information about the file being applied during a
+                WIMApplyImage operation.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimMessageType.Info">
+            <summary>
+                Sent to a WIMMessageCallback function to alert the caller that a non-critical error occurred while capturing or
+                applying an image.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimMessageType.Warning">
+            <summary>
+                Sent to a WIMMessageCallback function to warn the caller that a non-critical error occurred while capturing or
+                applying an image.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimMessageType.WarningObjectId">
+            <summary>
+                Sent to a WIMMessageCallback function to warn the caller that the Object ID for a particular file could not be
+                restored.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimMessageType.StaleMountDirectory">
+            <summary>
+                Sent to a WIMMessageCallback function to tell the caller that a stale mount directory is being removed.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimMessageType.StaleMountFile">
+            <summary>
+                Sent to a WIMMessageCallback function to tell the caller how many stale files were removed.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimMessageType.MountCleanupProgress">
+            <summary>
+                Sent to a WIMMessageCallback function to indicate progress during an image-cleanup operation.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimMessageType.CleanupScanningDrive">
+            <summary>
+                Sent to a WIMMessageCallback function to indicate that a drive is being scanned during a cleanup operation.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimMessageType.ImageAlreadyMounted">
+            <summary>
+                Sent to a WIMMessageCallback function to indicate that an image has been mounted to multiple locations. Only one
+                mount location can have changes written back to the .wim file.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimMessageType.CleanupUnmountingImage">
+            <summary>
+                Sent to a WIMMessageCallback function to indicate that an image is being unmounted as part of the cleanup process.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimMessageType.QueryAbort">
+            <summary>
+                Sent to a WIMMessageCallback function to allow the caller to abort an imaging operation that is currently
+                processing a file resource.
+            </summary>
+            <remarks>
+                This message is provided to allow applications to abort imaging operations that would otherwise not be aborted
+                until the next WIM_MSG_PROCESS message.
+            </remarks>
+        </member>
+        <member name="T:Microsoft.Wim.WimMountImageOptions">
+            <summary>
+                Represents options when mounting an image.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimMountImageOptions.Fast">
+            <summary>
+                Mounts the image using a faster operation.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimMountImageOptions.DisableDirectoryAcl">
+            <summary>
+                Disables capturing security information for directories.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimMountImageOptions.DisableFileAcl">
+            <summary>
+                Disables capturing security information for files.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimMountImageOptions.DisableRPFix">
+            <summary>
+                Disables automatic path repairs for junctions and symbolic links.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimMountImageOptions.Legacy">
+            <summary>
+                Mounts the image using a legacy operation.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimMountImageOptions.None">
+            <summary>
+                No options are set.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimMountImageOptions.ReadOnly">
+            <summary>
+                Mounts the image without the ability to save changes, regardless of WIM access level.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimMountImageOptions.Verify">
+            <summary>
+                Verifies that files match original data.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Wim.WimMountPointState">
+            <summary>
+                Represents the current state of a mount point.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimMountPointState.Invalid">
+            <summary>
+                The image mount point is no longer valid.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimMountPointState.Mounted">
+            <summary>
+                The image is actively mounted.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimMountPointState.Mounting">
+            <summary>
+                The image is in the process of mounting.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimMountPointState.NoMountDir">
+            <summary>
+                The image mount point has been removed or replaced.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimMountPointState.MountDirReplaced">
+            <summary>
+                The mount point has been replaced with by a different mounted image.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimMountPointState.NoWim">
+            <summary>
+                The WIM file backing the mount point is missing or inaccessible.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimMountPointState.ReadWrite">
+            <summary>
+                The image has been mounted with read-write access.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimMountPointState.Remountable">
+            <summary>
+                The image is not mounted, but is capable of being remounted.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Wim.WimSetReferenceMode">
+            <summary>
+                Specifies the mode to use when setting a reference file.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimSetReferenceMode.Append">
+            <summary>
+                The specified .wim file is appended to the current list.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimSetReferenceMode.Replace">
+            <summary>
+                The specified .wim file becomes the only item in the list.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Wim.WimSetReferenceOptions">
+            <summary>
+                Represents options when setting a reference file.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimSetReferenceOptions.None">
+            <summary>
+                No options are set.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimSetReferenceOptions.ShareWrite">
+            <summary>
+                The .wim file is opened in a mode that enables simultaneous reading and writing.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimSetReferenceOptions.Verify">
+            <summary>
+                Data integrity information is generated for new files, verified, and updated for existing files.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Wim.WimFileInfo">
+            <summary>
+                Provides properties of files contained in a Windows® image (.wim). This class cannot be inherited.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Wim.WimFileInfo.#ctor(System.String,Microsoft.Win32.WIN32_FIND_DATA)">
+            <summary>
+                Initializes a new instance of the WimFileInfo class.
+            </summary>
+            <param name="fullPath">The full path to the file or directory.</param>
+            <param name="findData">A <see cref="T:Microsoft.Win32.WIN32_FIND_DATA" /> containing information about the file or directory.</param>
+        </member>
+        <member name="M:Microsoft.Wim.WimFileInfo.#ctor(System.String,System.IntPtr)">
+            <summary>
+                Initializes a new instance of the WimFileInfo class.
+            </summary>
+            <param name="fullPath">The full path to the file or directory.</param>
+            <param name="findDataPtr">
+                A pointer to a <see cref="T:Microsoft.Win32.WIN32_FIND_DATA" /> containing information about the file or
+                directory.
+            </param>
+        </member>
+        <member name="P:Microsoft.Wim.WimFileInfo.Attributes">
+            <summary>
+                Gets the attributes for the current file or directory.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Wim.WimFileInfo.CreationTime">
+            <summary>
+                Gets the creation time of the current file or directory.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Wim.WimFileInfo.CreationTimeUtc">
+            <summary>
+                Gets the creation time, in coordinated universal time (UTC), of the current file or directory.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Wim.WimFileInfo.DirectoryName">
+            <summary>
+                Gets a string representing the directory's full path.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Wim.WimFileInfo.Extension">
+            <summary>
+                Gets the string representing the extension part of the file.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Wim.WimFileInfo.FullName">
+            <summary>
+                Gets the full path of the directory or file.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Wim.WimFileInfo.LastAccessTime">
+            <summary>
+                Gets the time the current file or directory was last accessed.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Wim.WimFileInfo.LastAccessTimeUtc">
+            <summary>
+                Gets the time, in coordinated universal time (UTC), that the current file or directory was last accessed.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Wim.WimFileInfo.LastWriteTime">
+            <summary>
+                Gets the time the current file or directory was last written to.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Wim.WimFileInfo.LastWriteTimeUtc">
+            <summary>
+                Gets the time, in coordinated universal time (UTC), that the current file or directory was last written to.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Wim.WimFileInfo.Length">
+            <summary>
+                Gets the size, in bytes, of the current file.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Wim.WimFileInfo.Name">
+            <summary>
+                Gets the name of the file.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Wim.WimgApi">
+            <summary>
+                Represents the Windows® Imaging API (WIMGAPI) for capturing and applying Windows® images (WIMs).
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimgApi.LockObject">
+            <summary>
+                Used as an object for locking.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimgApi.RegisteredCallbacks">
+            <summary>
+                An instance of the <see cref="T:Microsoft.Wim.WimRegisteredCallbacks" /> class for keeping track of registered callbacks.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Wim.WimgApi.ApplyImage(Microsoft.Wim.WimHandle,System.String,Microsoft.Wim.WimApplyImageOptions)">
+            <summary>
+                Applies an image to a directory path from a Windows® image (.wim) file.
+            </summary>
+            <param name="imageHandle">
+                A handle to a volume image returned by the <see cref="M:Microsoft.Wim.WimgApi.LoadImage(Microsoft.Wim.WimHandle,System.Int32)" /> or
+                <see cref="M:Microsoft.Wim.WimgApi.CaptureImage(Microsoft.Wim.WimHandle,System.String,Microsoft.Wim.WimCaptureImageOptions)" /> methods.
+            </param>
+            <param name="path">The root drive or the directory path where the image data will be applied.</param>
+            <param name="options">Specifies how the file is to be treated and what features are to be used.</param>
+            <returns><c>true</c> if the image was successfully applied, otherwise <c>false</c>.</returns>
+            <exception cref="T:System.ArgumentNullException">imageHandle is null.</exception>
+            <exception cref="T:System.OperationCanceledException">
+                The operation of applying the image was aborted by a callback returning
+                <see cref="F:Microsoft.Wim.WimMessageResult.Abort" />.
+            </exception>
+            <exception cref="T:System.ComponentModel.Win32Exception">The Windows® Imaging API reported a failure.</exception>
+        </member>
+        <member name="M:Microsoft.Wim.WimgApi.CaptureImage(Microsoft.Wim.WimHandle,System.String,Microsoft.Wim.WimCaptureImageOptions)">
+            <summary>
+                Captures an image from a directory path and stores it in an image file.
+            </summary>
+            <param name="wimHandle">The handle to a .wim file returned by <see cref="M:Microsoft.Wim.WimgApi.CreateFile(System.String,Microsoft.Wim.WimFileAccess,Microsoft.Wim.WimCreationDisposition,Microsoft.Wim.WimCreateFileOptions,Microsoft.Wim.WimCompressionType)" />.</param>
+            <param name="path">The root drive or directory path from where the image data is captured.</param>
+            <param name="options">Specifies the features to use during the capture.</param>
+            <returns>A <see cref="T:Microsoft.Wim.WimHandle" /> of the image if the method succeeded, otherwise false.</returns>
+            <exception cref="T:System.ArgumentNullException">
+                wimHandle is null.
+                -or-
+                path is null
+            </exception>
+            <exception cref="T:System.IO.DirectoryNotFoundException"><paramref name="path" /> does not exist.</exception>
+            <exception cref="T:System.ComponentModel.Win32Exception">The Windows® Imaging API reported a failure.</exception>
+        </member>
+        <member name="M:Microsoft.Wim.WimgApi.CommitImageHandle(Microsoft.Wim.WimHandle,System.Boolean,Microsoft.Wim.WimCommitImageOptions)">
+            <summary>
+                Saves the changes from a mounted image back to the.wim file.
+            </summary>
+            <param name="imageHandle">
+                A <see cref="T:Microsoft.Wim.WimHandle" /> opened by the <see cref="M:Microsoft.Wim.WimgApi.LoadImage(Microsoft.Wim.WimHandle,System.Int32)" /> method. The .wim file must
+                have been opened with a <see cref="F:Microsoft.Wim.WimFileAccess.Mount" /> flag in call to <see cref="M:Microsoft.Wim.WimgApi.CreateFile(System.String,Microsoft.Wim.WimFileAccess,Microsoft.Wim.WimCreationDisposition,Microsoft.Wim.WimCreateFileOptions,Microsoft.Wim.WimCompressionType)" />.
+            </param>
+            <param name="append">
+                <c>true</c> to append the modified image to the .wim file.  <c>false</c> to commit the changes to
+                the original image.
+            </param>
+            <param name="options">Specifies the features to use during the capture.</param>
+            <returns>If append is <c>true</c>, a <see cref="T:Microsoft.Wim.WimHandle" /> of the new image, otherwise a null handle.</returns>
+            <exception cref="T:System.ArgumentNullException">imageHandle is null.</exception>
+            <exception cref="T:System.ComponentModel.Win32Exception">The Windows® Imaging API reported a failure.</exception>
+        </member>
+        <member name="M:Microsoft.Wim.WimgApi.CopyFile(System.String,System.String,Microsoft.Wim.WimCopyFileOptions)">
+            <summary>
+                Copies an existing file to a new file.
+            </summary>
+            <param name="sourceFile">The name of an existing .wim file.</param>
+            <param name="destinationFile">The name of the new file.</param>
+            <param name="options">Specifies how the file is to be copied.</param>
+            <exception cref="T:System.ArgumentNullException">sourceFile or destinationFile is null.</exception>
+            <exception cref="T:System.ComponentModel.Win32Exception">The Windows® Imaging API reported a failure.</exception>
+        </member>
+        <member name="M:Microsoft.Wim.WimgApi.CopyFile(System.String,System.String,Microsoft.Wim.WimCopyFileOptions,Microsoft.Win32.CopyFileProgressCallback,System.Object)">
+            <summary>
+                Copies an existing file to a new file. Notifies the application of its progress through a callback function. If the
+                source file has verification data, the contents of the file are verified during the copy operation.
+            </summary>
+            <param name="sourceFile">The name of an existing .wim file.</param>
+            <param name="destinationFile">The name of the new file.</param>
+            <param name="options">Specifies how the file is to be copied.</param>
+            <param name="copyFileProgressCallback">
+                A <see cref="T:Microsoft.Win32.CopyFileProgressCallback" /> method to call when progress is made
+                copying the file and allowing the user to cancel the operation.
+            </param>
+            <param name="userData">An object containing data to be used by the progress callback method.</param>
+            <exception cref="T:System.ArgumentNullException">sourceFile or destinationFile is null.</exception>
+            <exception cref="T:System.ComponentModel.Win32Exception">The Windows® Imaging API reported a failure.</exception>
+        </member>
+        <member name="M:Microsoft.Wim.WimgApi.CreateFile(System.String,Microsoft.Wim.WimFileAccess,Microsoft.Wim.WimCreationDisposition,Microsoft.Wim.WimCreateFileOptions,Microsoft.Wim.WimCompressionType)">
+            <summary>
+                Makes a new image file or opens an existing image file.
+            </summary>
+            <param name="path">The name of the file to create or to open.</param>
+            <param name="desiredAccess">
+                The type of <see cref="T:Microsoft.Wim.WimFileAccess" /> to the object. An application can obtain read
+                access, write access, read/write access, or device query access.
+            </param>
+            <param name="creationDisposition">
+                The <see cref="T:Microsoft.Wim.WimCreationDisposition" /> to take on files that exist, and which
+                action to take when files do not exist.
+            </param>
+            <param name="options"><see cref="T:Microsoft.Wim.WimCreateFileOptions" /> to be used for the specified file.</param>
+            <param name="compressionType">
+                The <see cref="T:Microsoft.Wim.WimCompressionType" /> to be used for a newly created image file.  If the
+                file already exists, then this value is ignored.
+            </param>
+            <exception cref="T:System.ArgumentNullException">path is null.</exception>
+            <exception cref="T:System.ComponentModel.Win32Exception">The Windows® Imaging API reported a failure.</exception>
+        </member>
+        <member name="M:Microsoft.Wim.WimgApi.DeleteImage(Microsoft.Wim.WimHandle,System.Int32)">
+            <summary>
+                Removes an image from within a .wim (Windows image) file so it cannot be accessed. However, the file resources are
+                still available for use by the <see cref="M:Microsoft.Wim.WimgApi.SetReferenceFile(Microsoft.Wim.WimHandle,System.String,Microsoft.Wim.WimSetReferenceMode,Microsoft.Wim.WimSetReferenceOptions)" /> method.
+            </summary>
+            <param name="wimHandle">
+                A <see cref="T:Microsoft.Wim.WimHandle" /> to a .wim file returned by the <see cref="M:Microsoft.Wim.WimgApi.CreateFile(System.String,Microsoft.Wim.WimFileAccess,Microsoft.Wim.WimCreationDisposition,Microsoft.Wim.WimCreateFileOptions,Microsoft.Wim.WimCompressionType)" /> method.
+                This handle must have <see cref="F:Microsoft.Wim.WimFileAccess.Write" /> access to delete the image. Split .wim files are not
+                supported and the .wim file cannot have any open images.
+            </param>
+            <param name="index">
+                The one-based index of the image to delete. A .wim file might have multiple images stored within
+                it.
+            </param>
+            <exception cref="T:System.ArgumentNullException">wimHandle is null.</exception>
+            <exception cref="T:System.IndexOutOfRangeException">
+                <paramref name="index" /> is less than 1
+                -or-
+                <paramref name="index" /> is greater than the number of images in the Windows® imaging file.
+            </exception>
+            <exception cref="T:System.ComponentModel.Win32Exception">The Windows® Imaging API reported a failure.</exception>
+            <remarks>
+                You must call the <see cref="M:Microsoft.Wim.WimgApi.SetTemporaryPath(Microsoft.Wim.WimHandle,System.String)" /> method before calling the <see cref="M:Microsoft.Wim.WimgApi.DeleteImage(Microsoft.Wim.WimHandle,System.Int32)" /> method
+                so the image metadata for the image can be extracted and processed from the temporary location.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.Wim.WimgApi.DeleteImageMounts(System.Boolean)">
+            <summary>
+                Removes images from all directories where they have been previously mounted.
+            </summary>
+            <param name="removeAll">
+                <c>true</c> to removes all mounted images, whether actively mounted or not, otherwise
+                <c>false</c> to remove only images that are not actively mounted.
+            </param>
+            <exception cref="T:System.ComponentModel.Win32Exception">The Windows® Imaging API reported a failure.</exception>
+        </member>
+        <member name="M:Microsoft.Wim.WimgApi.ExportImage(Microsoft.Wim.WimHandle,Microsoft.Wim.WimHandle,Microsoft.Wim.WimExportImageOptions)">
+            <summary>
+                Transfers the data of an image from one Windows® image (.wim) file to another.
+            </summary>
+            <param name="imageHandle">A <see cref="T:Microsoft.Wim.WimHandle" /> opened by the <see cref="M:Microsoft.Wim.WimgApi.LoadImage(Microsoft.Wim.WimHandle,System.Int32)" /> method.</param>
+            <param name="wimHandle">
+                A <see cref="T:Microsoft.Wim.WimHandle" /> returned by the <see cref="M:Microsoft.Wim.WimgApi.CreateFile(System.String,Microsoft.Wim.WimFileAccess,Microsoft.Wim.WimCreationDisposition,Microsoft.Wim.WimCreateFileOptions,Microsoft.Wim.WimCompressionType)" /> method.  This handle must
+                have <see cref="F:Microsoft.Wim.WimFileAccess.Write" /> access to accept the exported image. Split .wim files are not supported.
+            </param>
+            <param name="options">Specifies how the image will be exported to the destination .wim file.</param>
+            <exception cref="T:System.ArgumentNullException">imageHandle or wimHandle is null.</exception>
+            <exception cref="T:System.ComponentModel.Win32Exception">The Windows® Imaging API reported a failure.</exception>
+            <remarks>
+                You must call the <see cref="M:Microsoft.Wim.WimgApi.SetTemporaryPath(Microsoft.Wim.WimHandle,System.String)" /> method for both the source and the destination .wim files
+                before calling the ExportImage method.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.Wim.WimgApi.ExtractImagePath(Microsoft.Wim.WimHandle,System.String,System.String)">
+            <summary>
+                Extracts a file from within a Windows® image (.wim) file to a specified location.
+            </summary>
+            <param name="imageHandle">A <see cref="T:Microsoft.Wim.WimHandle" /> opened by the <see cref="M:Microsoft.Wim.WimgApi.LoadImage(Microsoft.Wim.WimHandle,System.Int32)" /> method.</param>
+            <param name="sourceFile">The path to a file inside the image.</param>
+            <param name="destinationFile">The full file path of the directory where the image path is to be extracted.</param>
+            <exception cref="T:System.ArgumentNullException">imageHandle, sourceFile, or destinationFile is null.</exception>
+            <exception cref="T:System.ComponentModel.Win32Exception">The Windows® Imaging API reported a failure.</exception>
+        </member>
+        <member name="M:Microsoft.Wim.WimgApi.GetAttributes(Microsoft.Wim.WimHandle)">
+            <summary>
+                Returns the number of volume images stored in an image file.
+            </summary>
+            <param name="wimHandle">A <see cref="T:Microsoft.Wim.WimHandle" /> of a .wim file returned by <see cref="M:Microsoft.Wim.WimgApi.CreateFile(System.String,Microsoft.Wim.WimFileAccess,Microsoft.Wim.WimCreationDisposition,Microsoft.Wim.WimCreateFileOptions,Microsoft.Wim.WimCompressionType)" />.</param>
+            <returns>A <see cref="T:Microsoft.Wim.WimInfo" /> object containing information about the image file.</returns>
+            <exception cref="T:System.ArgumentNullException">wimHandle is null.</exception>
+            <exception cref="T:System.ComponentModel.Win32Exception">The Windows® Imaging API reported a failure.</exception>
+        </member>
+        <member name="M:Microsoft.Wim.WimgApi.GetImageCount(Microsoft.Wim.WimHandle)">
+            <summary>
+                Returns the number of volume images stored in a Windows® image (.wim) file.
+            </summary>
+            <param name="wimHandle">A <see cref="T:Microsoft.Wim.WimHandle" /> of a .wim file returned by the <see cref="M:Microsoft.Wim.WimgApi.CreateFile(System.String,Microsoft.Wim.WimFileAccess,Microsoft.Wim.WimCreationDisposition,Microsoft.Wim.WimCreateFileOptions,Microsoft.Wim.WimCompressionType)" /> method.</param>
+            <returns>
+                The number of images in the .wim file. If this value is zero, then the image file is invalid or does not
+                contain any images that can be applied.
+            </returns>
+        </member>
+        <member name="M:Microsoft.Wim.WimgApi.GetImageInformation(Microsoft.Wim.WimHandle)">
+            <summary>
+                Gets an <see cref="T:System.Xml.XmlDocument" /> that contains information about an image within the .wim (Windows image) file.
+            </summary>
+            <param name="wimHandle">
+                Either a <see cref="T:Microsoft.Wim.WimHandle" /> returned from <see cref="M:Microsoft.Wim.WimgApi.CreateFile(System.String,Microsoft.Wim.WimFileAccess,Microsoft.Wim.WimCreationDisposition,Microsoft.Wim.WimCreateFileOptions,Microsoft.Wim.WimCompressionType)" />,
+                <see cref="M:Microsoft.Wim.WimgApi.LoadImage(Microsoft.Wim.WimHandle,System.Int32)" />, or <see cref="M:Microsoft.Wim.WimgApi.CaptureImage(Microsoft.Wim.WimHandle,System.String,Microsoft.Wim.WimCaptureImageOptions)" />.
+            </param>
+            <returns>An <see cref="T:System.Xml.XPath.IXPathNavigable" /> object containing XML information about the volume image.</returns>
+            <exception cref="T:System.ArgumentNullException">wimHandle is null.</exception>
+            <exception cref="T:System.ComponentModel.Win32Exception">The Windows® Imaging API reported a failure.</exception>
+        </member>
+        <member name="M:Microsoft.Wim.WimgApi.GetMessageCallbackCount">
+            <summary>
+                Gets the count of callback routines currently registered by the imaging library.
+            </summary>
+            <returns>The number of message callback functions currently registered.</returns>
+            <exception cref="T:System.ArgumentNullException">wimHandle is null.</exception>
+        </member>
+        <member name="M:Microsoft.Wim.WimgApi.GetMessageCallbackCount(Microsoft.Wim.WimHandle)">
+            <summary>
+                Gets the count of callback routines currently registered by the imaging library.
+            </summary>
+            <param name="wimHandle">A <see cref="T:Microsoft.Wim.WimHandle" /> of a .wim file returned by <see cref="M:Microsoft.Wim.WimgApi.CreateFile(System.String,Microsoft.Wim.WimFileAccess,Microsoft.Wim.WimCreationDisposition,Microsoft.Wim.WimCreateFileOptions,Microsoft.Wim.WimCompressionType)" />.</param>
+            <returns>The number of message callback functions currently registered.</returns>
+            <exception cref="T:System.ArgumentNullException">wimHandle is null.</exception>
+        </member>
+        <member name="M:Microsoft.Wim.WimgApi.GetMountedImageHandle(System.String,System.Boolean,Microsoft.Wim.WimHandle@)">
+            <summary>
+                Gets a <see cref="T:Microsoft.Wim.WimHandle" /> for the .wim file and a <see cref="T:Microsoft.Wim.WimHandle" /> for the image corresponding to a
+                mounted image directory.
+            </summary>
+            <param name="mountPath">The full file path of the directory to which the .wim file has been mounted.</param>
+            <param name="readOnly">
+                <c>true</c> to get a handle that cannot commit changes, regardless of the access level requested
+                at mount time, otherwise <c>false</c>.
+            </param>
+            <param name="imageHandle">A <see cref="T:Microsoft.Wim.WimHandle" />corresponding to the image mounted at the specified path.</param>
+            <returns>A <see cref="T:Microsoft.Wim.WimHandle" />corresponding to the .wim file mounted at the specified path.</returns>
+            <exception cref="T:System.ArgumentNullException">mountPath is null.</exception>
+            <exception cref="T:System.ComponentModel.Win32Exception">The Windows® Imaging API reported a failure.</exception>
+        </member>
+        <member name="M:Microsoft.Wim.WimgApi.GetMountedImageInfo">
+            <summary>
+                Gets a <see cref="T:Microsoft.Wim.WimMountInfoCollection" /> containing <see cref="T:Microsoft.Wim.WimMountInfo" /> objects that represent a list
+                of images that are currently mounted.
+            </summary>
+            <returns>A <see cref="T:Microsoft.Wim.WimMountInfoCollection" /> containing <see cref="T:Microsoft.Wim.WimMountInfo" /> objects.</returns>
+            <exception cref="T:System.ComponentModel.Win32Exception">The Windows® Imaging API reported a failure.</exception>
+        </member>
+        <member name="M:Microsoft.Wim.WimgApi.GetMountedImageInfoFromHandle(Microsoft.Wim.WimHandle)">
+            <summary>
+                Gets information about a mounted image of the specified mounted image handle.
+            </summary>
+            <param name="imageHandle">A <see cref="T:Microsoft.Wim.WimHandle" /> of an image that has been mounted.</param>
+            <returns>A <see cref="T:Microsoft.Wim.WimMountInfo" /> object containing information about the mounted image.</returns>
+            <exception cref="T:System.ArgumentNullException">imageHandle is null.</exception>
+            <exception cref="T:System.ComponentModel.Win32Exception">The Windows® Imaging API reported a failure.</exception>
+        </member>
+        <member name="M:Microsoft.Wim.WimgApi.LoadImage(Microsoft.Wim.WimHandle,System.Int32)">
+            <summary>
+                Loads a volume image from a Windows® image (.wim) file.
+            </summary>
+            <param name="wimHandle">A <see cref="T:Microsoft.Wim.WimHandle" /> of a .wim file returned by the <see cref="M:Microsoft.Wim.WimgApi.CreateFile(System.String,Microsoft.Wim.WimFileAccess,Microsoft.Wim.WimCreationDisposition,Microsoft.Wim.WimCreateFileOptions,Microsoft.Wim.WimCompressionType)" /> method.</param>
+            <param name="index">The one-based index of the image to load. An image file may store multiple images.</param>
+            <returns>A <see cref="T:Microsoft.Wim.WimHandle" /> representing the volume image.</returns>
+            <exception cref="T:System.ArgumentNullException">wimHandle is null.</exception>
+            <exception cref="T:System.IndexOutOfRangeException">
+                index is less than 1
+                -or-
+                index is greater than the number of images in the Windows® imaging file.
+            </exception>
+            <exception cref="T:System.ComponentModel.Win32Exception">The Windows® Imaging API reported a failure.</exception>
+            <remarks>
+                You must call the <see cref="M:Microsoft.Wim.WimgApi.SetTemporaryPath(Microsoft.Wim.WimHandle,System.String)" /> method before calling the <see cref="M:Microsoft.Wim.WimgApi.LoadImage(Microsoft.Wim.WimHandle,System.Int32)" /> method so
+                the image metadata can be extracted and processed from the temporary location.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.Wim.WimgApi.MountImage(System.String,System.String,System.Int32)">
+            <summary>
+                Mounts an image in a Windows® image (.wim) file to the specified directory and does not allow for edits.
+            </summary>
+            <param name="mountPath">The full file path of the directory to which the .wim file has to be mounted.</param>
+            <param name="imagePath">The full file name of the .wim file that has to be mounted.</param>
+            <param name="imageIndex">An index of the image in the .wim file that has to be mounted.</param>
+            <exception cref="T:System.ArgumentNullException">mountPath or imagePath is null.</exception>
+            <exception cref="T:System.IO.DirectoryNotFoundException">mountPath does not exist.</exception>
+            <exception cref="T:System.IO.FileNotFoundException">imagePath does not exist.</exception>
+            <exception cref="T:System.IndexOutOfRangeException">index is less than 1.</exception>
+            <exception cref="T:System.ComponentModel.Win32Exception">The Windows® Imaging API reported a failure.</exception>
+        </member>
+        <member name="M:Microsoft.Wim.WimgApi.MountImage(System.String,System.String,System.Int32,System.String)">
+            <summary>
+                Mounts an image in a Windows® image (.wim) file to the specified directory.
+            </summary>
+            <param name="mountPath">The full file path of the directory to which the .wim file has to be mounted.</param>
+            <param name="imagePath">The full file name of the .wim file that has to be mounted.</param>
+            <param name="imageIndex">The one-based index of the image in the .wim file that is to be mounted.</param>
+            <param name="tempPath">
+                The full file path to the temporary directory in which changes to the .wim file can be tracked.
+                If this parameter is <c>null</c>, the image will not be mounted for edits.
+            </param>
+            <exception cref="T:System.ArgumentNullException">mountPath or imagePath is null.</exception>
+            <exception cref="T:System.IO.DirectoryNotFoundException">mountPath does not exist.</exception>
+            <exception cref="T:System.IO.FileNotFoundException">imagePath does not exist.</exception>
+            <exception cref="T:System.IndexOutOfRangeException">index is less than 1.</exception>
+            <exception cref="T:System.ComponentModel.Win32Exception">The Windows® Imaging API reported a failure.</exception>
+        </member>
+        <member name="M:Microsoft.Wim.WimgApi.MountImage(Microsoft.Wim.WimHandle,System.String,Microsoft.Wim.WimMountImageOptions)">
+            <summary>
+                Mounts an image in a Windows® image (.wim) file to the specified directory.
+            </summary>
+            <param name="imageHandle">
+                A <see cref="T:Microsoft.Wim.WimHandle" /> of a a volume image returned by the <see cref="M:Microsoft.Wim.WimgApi.LoadImage(Microsoft.Wim.WimHandle,System.Int32)" /> or
+                <see cref="M:Microsoft.Wim.WimgApi.CaptureImage(Microsoft.Wim.WimHandle,System.String,Microsoft.Wim.WimCaptureImageOptions)" /> method. The WIM file must have been opened with <see cref="F:Microsoft.Wim.WimFileAccess.Mount" /> flag
+                in call to <see cref="M:Microsoft.Wim.WimgApi.CreateFile(System.String,Microsoft.Wim.WimFileAccess,Microsoft.Wim.WimCreationDisposition,Microsoft.Wim.WimCreateFileOptions,Microsoft.Wim.WimCompressionType)" />.
+            </param>
+            <param name="mountPath">The full file path of the directory to which the .wim file has to be mounted.</param>
+            <param name="options">Specifies how the file is to be treated and what features are to be used.</param>
+            <exception cref="T:System.ArgumentNullException">imageHandle or mountPath is null.</exception>
+            <exception cref="T:System.IO.DirectoryNotFoundException">mountPath does not exist.</exception>
+            <exception cref="T:System.ComponentModel.Win32Exception">The Windows® Imaging API reported a failure.</exception>
+            <remarks>
+                This method maps the contents of the given image in a .wim file to the specified mount directory. After the
+                successful completion of this operation, users or applications can access the contents of the image mapped under
+                the mount directory. The WIM file containing the image must be opened with <see cref="F:Microsoft.Wim.WimFileAccess.Mount" />
+                access. Use the <see cref="M:Microsoft.Wim.WimgApi.UnmountImage(Microsoft.Wim.WimHandle)" /> method to unmount the image from the mount directory.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.Wim.WimgApi.RegisterLogFile(System.String)">
+            <summary>
+                Registers a log file for debugging or tracing purposes from the current WIMGAPI session.
+            </summary>
+            <param name="logFile">The full file path of the file to receive debug or tracing information.</param>
+            <exception cref="T:System.ArgumentNullException">logFile is null.</exception>
+            <exception cref="T:System.ComponentModel.Win32Exception">The Windows® Imaging API reported a failure.</exception>
+        </member>
+        <member name="M:Microsoft.Wim.WimgApi.RegisterMessageCallback(Microsoft.Wim.WimMessageCallback)">
+            <summary>
+                Registers a function to be called with imaging-specific data for all image handles.
+            </summary>
+            <param name="messageCallback">An application-defined callback function.</param>
+            <returns>The zero-based index of the callback.</returns>
+            <exception cref="T:System.ArgumentNullException">messageCallback is null.</exception>
+            <exception cref="T:System.ComponentModel.Win32Exception">The Windows® Imaging API reported a failure.</exception>
+        </member>
+        <member name="M:Microsoft.Wim.WimgApi.RegisterMessageCallback(Microsoft.Wim.WimMessageCallback,System.Object)">
+            <summary>
+                Registers a function to be called with imaging-specific data for all image handles.
+            </summary>
+            <param name="messageCallback">An application-defined callback method.</param>
+            <param name="userData">A pointer that specifies an application-defined value to be passed to the callback function.</param>
+            <returns>-1 if the callback is already registered, otherwise the zero-based index of the callback.</returns>
+            <exception cref="T:System.ArgumentNullException">messageCallback is null.</exception>
+            <exception cref="T:System.ComponentModel.Win32Exception">The Windows® Imaging API reported a failure.</exception>
+        </member>
+        <member name="M:Microsoft.Wim.WimgApi.RegisterMessageCallback(Microsoft.Wim.WimHandle,Microsoft.Wim.WimMessageCallback)">
+            <summary>
+                Registers a function to be called with imaging-specific data for only the specified WIM file.
+            </summary>
+            <param name="wimHandle">An optional <see cref="T:Microsoft.Wim.WimHandle" /> of a .wim file returned by <see cref="M:Microsoft.Wim.WimgApi.CreateFile(System.String,Microsoft.Wim.WimFileAccess,Microsoft.Wim.WimCreationDisposition,Microsoft.Wim.WimCreateFileOptions,Microsoft.Wim.WimCompressionType)" />.</param>
+            <param name="messageCallback">An application-defined callback function.</param>
+            <returns>The zero-based index of the callback.</returns>
+            <exception cref="T:System.ArgumentNullException">messageCallback is null.</exception>
+            <exception cref="T:System.ComponentModel.Win32Exception">The Windows® Imaging API reported a failure.</exception>
+        </member>
+        <member name="M:Microsoft.Wim.WimgApi.RegisterMessageCallback(Microsoft.Wim.WimHandle,Microsoft.Wim.WimMessageCallback,System.Object)">
+            <summary>
+                Registers a function to be called with imaging-specific data for only the specified WIM file.
+            </summary>
+            <param name="wimHandle">An optional <see cref="T:Microsoft.Wim.WimHandle" /> of a .wim file returned by <see cref="M:Microsoft.Wim.WimgApi.CreateFile(System.String,Microsoft.Wim.WimFileAccess,Microsoft.Wim.WimCreationDisposition,Microsoft.Wim.WimCreateFileOptions,Microsoft.Wim.WimCompressionType)" />.</param>
+            <param name="messageCallback">An application-defined callback method.</param>
+            <param name="userData">A pointer that specifies an application-defined value to be passed to the callback function.</param>
+            <returns>-1 if the callback is already registered, otherwise the zero-based index of the callback.</returns>
+            <exception cref="T:System.ArgumentNullException">messageCallback is null.</exception>
+            <exception cref="T:System.ComponentModel.Win32Exception">The Windows® Imaging API reported a failure.</exception>
+        </member>
+        <member name="M:Microsoft.Wim.WimgApi.RemountImage(System.String)">
+            <summary>
+                Reactivates a mounted image that was previously mounted to the specified directory.
+            </summary>
+            <param name="mountPath">The full file path of the directory to which the .wim file must be remounted.</param>
+            <exception cref="T:System.ArgumentNullException">mountPath is null.</exception>
+            <exception cref="T:System.IO.DirectoryNotFoundException">mountPath does not exist.</exception>
+            <exception cref="T:System.ComponentModel.Win32Exception">The Windows® Imaging API reported a failure.</exception>
+        </member>
+        <member name="M:Microsoft.Wim.WimgApi.SetBootImage(Microsoft.Wim.WimHandle,System.Int32)">
+            <summary>
+                Marks the image with the given image index as bootable.
+            </summary>
+            <param name="wimHandle">
+                A <see cref="T:Microsoft.Wim.WimHandle" /> of a Windows® image (.wim) file returned by the
+                <see cref="M:Microsoft.Wim.WimgApi.CreateFile(System.String,Microsoft.Wim.WimFileAccess,Microsoft.Wim.WimCreationDisposition,Microsoft.Wim.WimCreateFileOptions,Microsoft.Wim.WimCompressionType)" /> method.
+            </param>
+            <param name="imageIndex">The one-based index of the image to load. An image file can store multiple images.</param>
+            <exception cref="T:System.ArgumentNullException">wimHandle is null.</exception>
+            <exception cref="T:System.IndexOutOfRangeException">
+                index is less than 1 or greater than the number of images in the Windows®
+                image file.
+            </exception>
+            <exception cref="T:System.ComponentModel.Win32Exception">The Windows® Imaging API reported a failure.</exception>
+            <remarks>
+                If imageIndex is zero, then none of the images in the .wim file are marked for boot. At any time, only one
+                image in a .wim file can be set to be bootable.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.Wim.WimgApi.SetImageInformation(Microsoft.Wim.WimHandle,System.Xml.XPath.IXPathNavigable)">
+            <summary>
+                Stores information about an image in the Windows® image (.wim) file.
+            </summary>
+            <param name="wimHandle">
+                A <see cref="T:Microsoft.Wim.WimHandle" /> of an image returned by the <see cref="M:Microsoft.Wim.WimgApi.CreateFile(System.String,Microsoft.Wim.WimFileAccess,Microsoft.Wim.WimCreationDisposition,Microsoft.Wim.WimCreateFileOptions,Microsoft.Wim.WimCompressionType)" />,
+                <see cref="M:Microsoft.Wim.WimgApi.LoadImage(Microsoft.Wim.WimHandle,System.Int32)" />, or <see cref="M:Microsoft.Wim.WimgApi.CaptureImage(Microsoft.Wim.WimHandle,System.String,Microsoft.Wim.WimCaptureImageOptions)" /> methods.
+            </param>
+            <param name="imageInfoXml">An <see cref="T:System.Xml.XPath.IXPathNavigable" /> object that contains information about the volume image.</param>
+            <exception cref="T:System.ArgumentNullException">wimHandle or imageInfoXml is null.</exception>
+            <exception cref="T:System.ComponentModel.Win32Exception">The Windows® Imaging API reported a failure.</exception>
+            <remarks>
+                If the wimHandle parameter is from the <see cref="M:Microsoft.Wim.WimgApi.CreateFile(System.String,Microsoft.Wim.WimFileAccess,Microsoft.Wim.WimCreationDisposition,Microsoft.Wim.WimCreateFileOptions,Microsoft.Wim.WimCompressionType)" /> method, then the XML data must be enclosed by
+                &lt;WIM&gt;&lt;/WIM&gt; tags. If the input handle is from the <see cref="M:Microsoft.Wim.WimgApi.LoadImage(Microsoft.Wim.WimHandle,System.Int32)" /> or
+                <see cref="M:Microsoft.Wim.WimgApi.CaptureImage(Microsoft.Wim.WimHandle,System.String,Microsoft.Wim.WimCaptureImageOptions)" /> methods, then the XML data must be enclosed by &lt;IMAGE&gt;&lt;/IMAGE&gt; tags.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.Wim.WimgApi.SetReferenceFile(Microsoft.Wim.WimHandle,System.String,Microsoft.Wim.WimSetReferenceMode,Microsoft.Wim.WimSetReferenceOptions)">
+            <summary>
+                Enables the <see cref="M:Microsoft.Wim.WimgApi.ApplyImage(Microsoft.Wim.WimHandle,System.String,Microsoft.Wim.WimApplyImageOptions)" /> and <see cref="M:Microsoft.Wim.WimgApi.CaptureImage(Microsoft.Wim.WimHandle,System.String,Microsoft.Wim.WimCaptureImageOptions)" /> methods to use alternate .wim files for file
+                resources. This can enable optimization of storage when multiple images are captured with similar data.
+            </summary>
+            <param name="wimHandle">
+                A <see cref="T:Microsoft.Wim.WimHandle" /> of a .wim (Windows image) file returned by the
+                <see cref="M:Microsoft.Wim.WimgApi.CreateFile(System.String,Microsoft.Wim.WimFileAccess,Microsoft.Wim.WimCreationDisposition,Microsoft.Wim.WimCreateFileOptions,Microsoft.Wim.WimCompressionType)" /> method.
+            </param>
+            <param name="path">The path of the .wim file to be added to the reference list.</param>
+            <param name="mode">Specifies whether the .wim file is added to the reference list or replaces other entries.</param>
+            <param name="options">Specifies options when adding the .wim file to the reference list.</param>
+            <exception cref="T:System.ArgumentNullException">
+                wimHandle is null
+                -or-
+                mode is not WimSetReferenceMode.Replace and path is null.
+            </exception>
+            <exception cref="T:System.IO.FileNotFoundException">path does not exist.</exception>
+            <exception cref="T:System.ComponentModel.Win32Exception">The Windows® Imaging API reported a failure.</exception>
+            <remarks>
+                If <c>null</c> is passed in for the path parameter and <see cref="F:Microsoft.Wim.WimSetReferenceMode.Replace" /> is passed
+                for the mode parameter, then the reference list is completely cleared, and no file resources are extracted during
+                the <see cref="M:Microsoft.Wim.WimgApi.ApplyImage(Microsoft.Wim.WimHandle,System.String,Microsoft.Wim.WimApplyImageOptions)" /> method.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.Wim.WimgApi.SetTemporaryPath(Microsoft.Wim.WimHandle,System.String)">
+            <summary>
+                Sets the location where temporary imaging files are to be stored.
+            </summary>
+            <param name="wimHandle">A <see cref="T:Microsoft.Wim.WimHandle" /> of a .wim file returned by the <see cref="M:Microsoft.Wim.WimgApi.CreateFile(System.String,Microsoft.Wim.WimFileAccess,Microsoft.Wim.WimCreationDisposition,Microsoft.Wim.WimCreateFileOptions,Microsoft.Wim.WimCompressionType)" /> method.</param>
+            <param name="path">
+                The path where temporary image (.wim) files are to be stored during capture or application. This is
+                the directory where the image is captured or applied.
+            </param>
+            <exception cref="T:System.ArgumentNullException">wimHandle or path is null.</exception>
+            <exception cref="T:System.IO.DirectoryNotFoundException">path does not exist.</exception>
+            <exception cref="T:System.ComponentModel.Win32Exception">The Windows® Imaging API reported a failure.</exception>
+        </member>
+        <member name="M:Microsoft.Wim.WimgApi.SplitFile(Microsoft.Wim.WimHandle,System.String,System.Int64)">
+            <summary>
+                Enables a large Windows® image (.wim) file to be split into smaller parts for replication or storage on smaller
+                forms of media.
+            </summary>
+            <param name="wimHandle">A <see cref="T:Microsoft.Wim.WimHandle" /> of a .wim file returned by <see cref="M:Microsoft.Wim.WimgApi.CreateFile(System.String,Microsoft.Wim.WimFileAccess,Microsoft.Wim.WimCreationDisposition,Microsoft.Wim.WimCreateFileOptions,Microsoft.Wim.WimCompressionType)" />.</param>
+            <param name="partPath">The path of the first file piece of the spanned set.</param>
+            <param name="partSize">
+                The size of the initial piece of the spanned set. This value will also be the default size used
+                for subsequent pieces.
+            </param>
+            <exception cref="T:System.ArgumentNullException">wimHandle or partPath is null.</exception>
+            <exception cref="T:System.IO.DirectoryNotFoundException">Directory of partPath does not exist.</exception>
+            <exception cref="T:System.ComponentModel.Win32Exception">The Windows® Imaging API reported a failure.</exception>
+        </member>
+        <member name="M:Microsoft.Wim.WimgApi.SplitFile(Microsoft.Wim.WimHandle,System.String)">
+            <summary>
+                Gets the minimum size needed to to create a split WIM.
+            </summary>
+            <param name="wimHandle">A <see cref="T:Microsoft.Wim.WimHandle" /> of a .wim file returned by <see cref="M:Microsoft.Wim.WimgApi.CreateFile(System.String,Microsoft.Wim.WimFileAccess,Microsoft.Wim.WimCreationDisposition,Microsoft.Wim.WimCreateFileOptions,Microsoft.Wim.WimCompressionType)" />.</param>
+            <param name="partPath">The path of the first file piece of the spanned set.</param>
+            <returns>The minimum space required to split the WIM.</returns>
+            <exception cref="T:System.ArgumentNullException">wimHandle or partPath is null.</exception>
+            <exception cref="T:System.ComponentModel.Win32Exception">The Windows® Imaging API reported a failure.</exception>
+        </member>
+        <member name="M:Microsoft.Wim.WimgApi.UnmountImage(System.String,System.String,System.Int32,System.Boolean)">
+            <summary>
+                Unmounts a mounted image in a Windows® image (.wim) file from the specified directory.
+            </summary>
+            <param name="mountPath">The full file path of the directory to which the .wim file was mounted.</param>
+            <param name="imagePath">The full file name of the .wim file that must be unmounted.</param>
+            <param name="imageIndex">Specifies the index of the image in the .wim file that must be unmounted.</param>
+            <param name="commitChanges">
+                <c>true</c> to commit changes made to the .wim file if any, otherwise <c>false</c> to
+                discard changes.  This parameter has no effect if the .wim file was mounted not to enable edits.
+            </param>
+            <exception cref="T:System.ArgumentNullException">mountPath or imagePath is null.</exception>
+            <exception cref="T:System.IO.DirectoryNotFoundException">mountPath does not exist.</exception>
+            <exception cref="T:System.IO.FileNotFoundException">imagePath does not exist.</exception>
+            <exception cref="T:System.IndexOutOfRangeException">index is less than 1.</exception>
+            <exception cref="T:System.ComponentModel.Win32Exception">The Windows® Imaging API reported a failure.</exception>
+            <remarks>
+                This method unmaps the contents of the given image in the .wim file from the specified mount directory. After
+                the successful completion of this operation, users or applications will not be able to access the contents of the
+                image previously mapped under the mount directory.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.Wim.WimgApi.UnmountImage(Microsoft.Wim.WimHandle)">
+            <summary>
+                Unmounts a mounted image in a Windows® image (.wim) file from the specified directory.
+            </summary>
+            <param name="imageHandle">
+                A <see cref="T:Microsoft.Wim.WimHandle" /> of an image previously mounted with
+                <see cref="M:Microsoft.Wim.WimgApi.MountImage(Microsoft.Wim.WimHandle,System.String,Microsoft.Wim.WimMountImageOptions)" />.
+            </param>
+            <exception cref="T:System.ArgumentNullException">imageHandle is null.</exception>
+            <exception cref="T:System.ComponentModel.Win32Exception">The Windows® Imaging API reported a failure.</exception>
+        </member>
+        <member name="M:Microsoft.Wim.WimgApi.UnregisterLogFile(System.String)">
+            <summary>
+                Unregisters a log file for debugging or tracing purposes from the current WIMGAPI session.
+            </summary>
+            <param name="logFile">
+                The path to a log file previously specified in a call to the <see cref="M:Microsoft.Wim.WimgApi.RegisterLogFile(System.String)" />
+                method.
+            </param>
+            <exception cref="T:System.ArgumentNullException">logFile is null.</exception>
+            <exception cref="T:System.ComponentModel.Win32Exception">The Windows® Imaging API reported a failure.</exception>
+        </member>
+        <member name="M:Microsoft.Wim.WimgApi.UnregisterMessageCallback(Microsoft.Wim.WimMessageCallback)">
+            <summary>
+                Unregisters a method from being called with imaging-specific data for all image handles.
+            </summary>
+            <param name="messageCallback">An application-defined callback method.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException">messageCallback is not registered.</exception>
+            <exception cref="T:System.ComponentModel.Win32Exception">The Windows® Imaging API reported a failure.</exception>
+        </member>
+        <member name="M:Microsoft.Wim.WimgApi.UnregisterMessageCallback(Microsoft.Wim.WimHandle,Microsoft.Wim.WimMessageCallback)">
+            <summary>
+                Unregisters a method from being called with imaging-specific data for only the specified WIM file.
+            </summary>
+            <param name="wimHandle">A <see cref="T:Microsoft.Wim.WimHandle" /> of a .wim file returned by <see cref="M:Microsoft.Wim.WimgApi.CreateFile(System.String,Microsoft.Wim.WimFileAccess,Microsoft.Wim.WimCreationDisposition,Microsoft.Wim.WimCreateFileOptions,Microsoft.Wim.WimCompressionType)" />.</param>
+            <param name="messageCallback">An application-defined callback method.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException">messageCallback is not registered.</exception>
+            <exception cref="T:System.ComponentModel.Win32Exception">The Windows® Imaging API reported a failure.</exception>
+        </member>
+        <member name="M:Microsoft.Wim.WimgApi.CloseHandle(System.IntPtr)">
+            <summary>
+                Closes an open Windows® imaging (.wim) file or image handle.
+            </summary>
+            <param name="handle">A <see cref="T:Microsoft.Wim.WimHandle" /> to an open, image-based object.</param>
+            <returns><c>true</c> if the handle was successfully closed, otherwise <c>false</c>.</returns>
+            <exception cref="T:System.ComponentModel.Win32Exception">The Windows® Imaging API reported a failure.</exception>
+        </member>
+        <member name="F:Microsoft.Wim.WimgApi.INVALID_CALLBACK_VALUE">
+            <summary>
+                Indicates an error when calling the WIMRegisterMessageCallback function.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimgApi.WIM_ATTRIBUTE_METADATA_ONLY">
+            <summary>
+                The .wim file only contains image resources and XML information.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimgApi.WIM_ATTRIBUTE_NORMAL">
+            <summary>
+                The .wim file does not have any other attributes set.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimgApi.WIM_ATTRIBUTE_READONLY">
+            <summary>
+                The .wim file is locked and cannot be modified.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimgApi.WIM_ATTRIBUTE_RESOURCE_ONLY">
+            <summary>
+                The .wim file only contains file resources and no images or metadata.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimgApi.WIM_ATTRIBUTE_RP_FIX">
+            <summary>
+                The .wim file contains one or more images where symbolic link or junction path fixup is enabled.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimgApi.WIM_ATTRIBUTE_SPANNED">
+            <summary>
+                The .wim file has been split into multiple pieces via WIMSplitFile.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimgApi.WIM_ATTRIBUTE_VERIFY_DATA">
+            <summary>
+                The .wim file contains integrity data that can be used by the WIMCopyFile or WIMCreateFile function.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimgApi.WIM_COMMIT_FLAG_APPEND">
+            <summary>
+                Adds a new image entry to the .wim file. The default is to update the image specified during mount.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimgApi.WIM_COPY_FILE_RETRY">
+            <summary>
+                Automatically retries copy operations in event of failures.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimgApi.WIM_CREATE_ALWAYS">
+            <summary>
+                Makes a new image file. If the file exists, the function overwrites the file.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimgApi.WIM_CREATE_NEW">
+            <summary>
+                Makes a new image file. If the specified file already exists, the function fails.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimgApi.WIM_DELETE_MOUNTS_ALL">
+            <summary>
+                Removes all mounted images, whether actively mounted or not.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimgApi.WIM_EXPORT_ALLOW_DUPLICATES">
+            <summary>
+                The image will be exported to the destination .wim file even if it is already stored in that .wim file.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimgApi.WIM_EXPORT_ONLY_METADATA">
+            <summary>
+                Image resources and XML information are exported to the destination .wim file and no supporting file resources are
+                included.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimgApi.WIM_EXPORT_ONLY_RESOURCES">
+            <summary>
+                File resources will be exported to the destination .wim file and no image resources or XML information will be
+                included.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimgApi.WIM_EXPORT_VERIFY_DESTINATION">
+            <summary>
+                Verifies the destination file.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimgApi.WIM_EXPORT_VERIFY_SOURCE">
+            <summary>
+                Verifies the source file.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimgApi.WIM_FLAG_FILEINFO">
+            <summary>
+                Sends a WIM_MSG_FILEINFO message during the apply operation.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimgApi.WIM_FLAG_INDEX">
+            <summary>
+                Specifies that the image is to be sequentially read for caching or performance purposes.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimgApi.WIM_FLAG_MOUNT_FAST">
+            <summary>
+                Mounts the image using a faster operation.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimgApi.WIM_FLAG_MOUNT_LEGACY">
+            <summary>
+                Mounts the image using a legacy operation.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimgApi.WIM_FLAG_MOUNT_READONLY">
+            <summary>
+                Mounts the image without the ability to save changes, regardless of WIM access level.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimgApi.WIM_FLAG_NO_APPLY">
+            <summary>
+                Applies the image without physically creating directories or files. Useful for obtaining a list of files and
+                directories in the image.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimgApi.WIM_FLAG_NO_DIRACL">
+            <summary>
+                Disables restoring security information for directories.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimgApi.WIM_FLAG_NO_FILEACL">
+            <summary>
+                Disables restoring security information for files
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimgApi.WIM_FLAG_NO_RP_FIX">
+            <summary>
+                Disables automatic path fixups for junctions and symbolic links.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimgApi.WIM_FLAG_RESERVED">
+            <summary>
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimgApi.WIM_FLAG_SHARE_WRITE">
+            <summary>
+                Opens the .wim file in a mode that enables simultaneous reading and writing.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimgApi.WIM_FLAG_VERIFY">
+            <summary>
+                Verifies that files match original data.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimgApi.WIM_GENERIC_MOUNT">
+            <summary>
+                Specifies mount access to the image file. Enables images to be mounted with WIMMountImageHandle.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimgApi.WIM_GENERIC_READ">
+            <summary>
+                Specifies read-only access to the image file. Enables images to be applied from the file. Combine with
+                WIM_GENERIC_WRITE for read/write (append) access.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimgApi.WIM_GENERIC_WRITE">
+            <summary>
+                Specifies write access to the image file. Enables images to be captured to the file. Includes WIM_GENERIC_READ
+                access to enable apply and append operations with existing images.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimgApi.WIM_LOGFILE_UTF8">
+            <summary>
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimgApi.WIM_MOUNT_FLAG_INVALID">
+            <summary>
+                The image mount point is no longer valid.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimgApi.WIM_MOUNT_FLAG_MOUNTDIR_REPLACED">
+            <summary>
+                The mount point has been replaced with by a different mounted image.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimgApi.WIM_MOUNT_FLAG_MOUNTED">
+            <summary>
+                The image is actively mounted.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimgApi.WIM_MOUNT_FLAG_MOUNTING">
+            <summary>
+                The image is in the process of mounting.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimgApi.WIM_MOUNT_FLAG_NO_MOUNTDIR">
+            <summary>
+                The image mount point has been removed or replaced.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimgApi.WIM_MOUNT_FLAG_NO_WIM">
+            <summary>
+                The WIM file backing the mount point is missing or inaccessible.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimgApi.WIM_MOUNT_FLAG_READWRITE">
+            <summary>
+                The image has been mounted with read-write access.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimgApi.WIM_MOUNT_FLAG_REMOUNTABLE">
+            <summary>
+                The image is not mounted, but is capable of being remounted.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimgApi.WIM_MSG_ABORT_IMAGE">
+            <summary>
+                Cancels an image apply or image capture.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimgApi.WIM_MSG_DONE">
+            <summary>
+                Indicates success and prevents other subscribers from processing the message.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimgApi.WIM_MSG_SKIP_ERROR">
+            <summary>
+                Indicates the error can be ignored.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimgApi.WIM_MSG_SUCCESS">
+            <summary>
+                Indicates success and to enables other subscribers to process the message.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimgApi.WIM_OPEN_ALWAYS">
+            <summary>
+                Opens the image file if it exists. If the file does not exist and the caller requests WIM_GENERIC_WRITE access, the
+                function makes the file.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimgApi.WIM_OPEN_EXISTING">
+            <summary>
+                Opens the image file. If the file does not exist, the function fails.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimgApi.WIM_REFERENCE_APPEND">
+            <summary>
+                The specified .wim file is appended to the current list.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimgApi.WIM_REFERENCE_REPLACE">
+            <summary>
+                The specified .wim file becomes the only item in the list.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimgApi.WimgApiCallingConvention">
+            <summary>
+                The calling convention to use when calling the WIMGAPI.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimgApi.WimgApiCharSet">
+            <summary>
+                The character set to use when calling the WIMGAPI.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimgApi.WimgApiDllName">
+            <summary>
+                The name of the assembly containing the Windows® Imaging API (WIMGAPI).
+            </summary>
+        </member>
+        <member name="T:Microsoft.Wim.WimgApi.NativeMethods">
+            <summary>
+                Contains declarations for external native functions.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Wim.WimgApi.NativeMethods.WIMApplyImage(Microsoft.Wim.WimHandle,System.String,System.UInt32)">
+            <summary>
+                Applies an image to a directory path from a Windows® image (.wim) file.
+            </summary>
+            <param name="hImage">A handle to a volume image returned by the WIMLoadImage or WIMCaptureImage functions.</param>
+            <param name="pszPath">
+                A pointer to a null-terminated string containing the root drive or the directory path where the
+                image data will be applied.
+            </param>
+            <param name="dwApplyFlags">Specifies how the file is to be treated and what features are to be used.</param>
+            <returns>
+                If the function succeeds, the return value is an open handle to the specified image file.
+                If the function fails, the return value is NULL. To obtain extended error information, call the GetLastError
+                function.
+            </returns>
+            <remarks>
+                To obtain more information during an image apply, see the WIMRegisterMessageCallback function.
+                To obtain the list of files in an image without actually applying the image, specify the WIM_FLAG_NO_APPLY flag and
+                register a callback that handles the WIM_MSG_PROCESS message. To obtain additional file information from the
+                WIM_MSG_FILEINFO message, specify the WIM_FLAG_FILEINFO.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.Wim.WimgApi.NativeMethods.WIMCaptureImage(Microsoft.Wim.WimHandle,System.String,System.UInt32)">
+            <summary>
+                Captures an image from a directory path and stores it in an image file.
+            </summary>
+            <param name="hWim">The handle to a .wim file returned by WIMCreateFile.</param>
+            <param name="pszPath">
+                A pointer to a null-terminated string containing the root drive or directory path from where the
+                image data is captured.
+            </param>
+            <param name="dwCaptureFlags">Specifies the features to use during the capture.</param>
+            <returns>
+                If the function succeeds, the return value is an open handle to the specified image file.
+                If the function fails, the return value is NULL. To obtain extended error information, call the GetLastError
+                function.
+            </returns>
+            <remarks>To obtain information during an image capture, see the WIMRegisterMessageCallback function.</remarks>
+        </member>
+        <member name="M:Microsoft.Wim.WimgApi.NativeMethods.WIMCloseHandle(System.IntPtr)">
+            <summary>
+                Closes an open Windows® imaging (.wim) file or image handle.
+                <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/dd851955.aspx">WIMCloseHandle</a>
+            </summary>
+            <param name="hObject">The handle to an open, image-based object.</param>
+            <returns>
+                If the function succeeds, the return value is nonzero.
+                If the function fails, the return value is zero. To obtain extended error information, call the GetLastError
+                function.
+            </returns>
+            <remarks>
+                The WIMCloseHandle function closes handles to the following objects:
+                A .wim file
+                A volume image
+                If there are any open volume image handles, closing a .wim file fails.
+                Use the WIMCloseHandle function to close handles returned by calls to the WIMCreateFile, WIMLoadImage, and
+                WIMCaptureImage functions.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.Wim.WimgApi.NativeMethods.WIMCommitImageHandle(Microsoft.Wim.WimHandle,System.UInt32,Microsoft.Wim.WimHandle@)">
+            <summary>
+                Saves the changes from a mounted image back to the .wim file.
+            </summary>
+            <param name="hImage">
+                A handle to an image opened by the WIMLoadImage function. The .wim file must have been opened with
+                a WIM_GENERIC_MOUNT flag in call to WIMCreateFile.
+            </param>
+            <param name="dwCommitFlags">Specifies the features to use during the capture.</param>
+            <param name="phNewImageHandle">
+                Pointer to receive the new image handle if the WIM_COMMIT_FLAG_APPEND flag is specified.
+                If this parameter is NULL, the new image will be closed automatically.
+            </param>
+            <returns>
+                Returns TRUE and sets the LastError to ERROR_SUCCESS on the successful completion of this function. Returns
+                FALSE in case of a failure and sets the LastError to the appropriate Win32® error value.
+            </returns>
+            <remarks>
+                The WIMCommitImageHandle function updates the contents of the given image in a .wim file to reflect the
+                contents of the specified mount directory. After the successful completion of this operation, users or applications
+                can still access the contents of the image mapped under the mount directory. Use the WIMUnmountImageHandle function
+                to unmount the image from the mount directory using an image handle.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.Wim.WimgApi.NativeMethods.WIMCopyFile(System.String,System.String,Microsoft.Win32.Kernel32.CopyProgressRoutine,System.IntPtr,System.Boolean@,System.UInt32)">
+            <summary>
+                Copies an existing file to a new file. Notifies the application of its progress through a callback function. If the
+                source file has verification data, the contents of the file are verified during the copy operation.
+            </summary>
+            <param name="pszExistingFileName">
+                A pointer to a null-terminated string that specifies the name of an existing .wim
+                file.
+            </param>
+            <param name="pszNewFileName">A pointer to a null-terminated string that specifies the name of the new file.</param>
+            <param name="pProgressRoutine">
+                The address of a callback function of type LPPROGRESS_ROUTINE that is called each time
+                another portion of the file has been copied. This parameter can be NULL.
+            </param>
+            <param name="pvData">An argument to be passed to the callback function. This parameter can be NULL.</param>
+            <param name="pbCancel">
+                If this flag is set to TRUE during the copy operation, the operation is canceled. Otherwise, the
+                copy operation continues to completion.
+            </param>
+            <param name="dwCopyFlags">A flag that specifies how the file is to be copied.</param>
+            <returns>
+                If the function succeeds, the return value is nonzero.
+                If the function fails, the return value is zero. To obtain extended error information, call the GetLastError
+                function.
+                If pProgressRoutine returns PROGRESS_CANCEL because the user cancels the operation, the WIMCopyFile function will
+                return zero and set the LastError to ERROR_REQUEST_ABORTED. In this case, the partially copied destination file is
+                deleted.
+                If pProgressRoutine returns PROGRESS_STOP because the user stops the operation, WIMCopyFile will return zero and
+                set the LastError to ERROR_REQUEST_ABORTED. In this case, the partially copied destination file is left intact.
+                If the source file contains verification information, an integrity check is performed on each block as it is
+                copied. If the integrity check fails, the WIMCopyFile function will return zero and set the LastError to
+                ERROR_FILE_CORRUPT.
+            </returns>
+            <remarks>
+                This function does not preserve extended attributes, security attributes, OLE-structured storage, NTFS file system
+                alternate data streams, or file attributes.
+                The WIMCopyFile function copies only the default stream of the source file, so the StreamSize and
+                StreamBytesTransferred parameters to the CopyProgressRoutine function will always match TotalFileSize and
+                TotalBytesTransferred, respectively. The value of the dwStreamNumber parameter will always be 1 and the value of
+                the dwCallBackReason parameter will always be CALLBACK_CHUNK_FINISHED.
+                If the destination file already exists and has the FILE_ATTRIBUTE_HIDDEN or FILE_ATTRIBUTE_READONLY attribute set,
+                this function fails with ERROR_ACCESS_DENIED.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.Wim.WimgApi.NativeMethods.WIMCreateFile(System.String,System.UInt32,System.UInt32,System.UInt32,System.UInt32,Microsoft.Wim.WimCreationResult@)">
+            <summary>
+                Makes a new image file or opens an existing image file.
+            </summary>
+            <param name="pszWimPath">
+                A pointer to a null-terminated string that specifies the name of the file to create or to
+                open.
+            </param>
+            <param name="dwDesiredAccess">
+                Specifies the type of access to the object. An application can obtain read access, write
+                access, read/write access, or device query access.
+            </param>
+            <param name="dwCreationDisposition">
+                Specifies which action to take on files that exist, and which action to take when
+                files do not exist.
+            </param>
+            <param name="dwFlagsAndAttributes">Specifies special actions to be taken for the specified file.</param>
+            <param name="dwCompressionType">
+                Specifies the compression mode to be used for a newly created image file. If the file
+                already exists, then this value is ignored.
+            </param>
+            <param name="pdwCreationResult">
+                A pointer to a variable that receives one of the following creation-result values. If
+                this information is not required, specify NULL.
+            </param>
+            <returns>
+                If the function succeeds, the return value is an open handle to the specified image file.
+                If the function fails, the return value is NULL. To obtain extended error information, call the GetLastError
+                function.
+            </returns>
+            <remarks>Use the WIMCloseHandle function to close the handle returned by the WIMCreateFile function.</remarks>
+        </member>
+        <member name="M:Microsoft.Wim.WimgApi.NativeMethods.WIMDeleteImage(Microsoft.Wim.WimHandle,System.UInt32)">
+            <summary>
+                Removes an image from within a .wim (Windows image) file so it cannot be accessed. However, the file resources are
+                still available for use by the WIMSetReferenceFile function.
+            </summary>
+            <param name="hWim">
+                The handle to a .wim file returned by the WIMCreateFile function. This handle must have
+                WIM_GENERIC_WRITE access to delete the image. Split .wim files are not supported and the .wim file cannot have any
+                open images.
+            </param>
+            <param name="dwImageIndex">
+                Specifies the one-based index of the image to delete. A .wim file might have multiple images
+                stored within it.
+            </param>
+            <returns>
+                If the function succeeds, then the return value is nonzero.
+                If the function fails, then the return value is zero. To obtain extended error information, call GetLastError.
+                If there is only one image in the specified .wim file, then the WIMDeleteImage function will fail and set the
+                LastError to ERROR_ACCESS_DENIED.
+            </returns>
+            <remarks>
+                You must call the WIMSetTemporaryPath function before calling the WIMDeleteImage function so the image
+                metadata for the image can be extracted and processed from the temporary location.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.Wim.WimgApi.NativeMethods.WIMDeleteImageMounts(System.UInt32)">
+            <summary>
+                Removes images from all directories where they have been previously mounted.
+            </summary>
+            <param name="dwDeleteFlags">Specifies which types of images are to be removed.</param>
+            <returns>
+                If the function succeeds, the return value is nonzero.
+                If the function fails, the return value is zero. To obtain extended error information, call the GetLastError
+                function.
+            </returns>
+        </member>
+        <member name="M:Microsoft.Wim.WimgApi.NativeMethods.WIMExportImage(Microsoft.Wim.WimHandle,Microsoft.Wim.WimHandle,System.UInt32)">
+            <summary>
+                Transfers the data of an image from one Windows® image (.wim) file to another.
+            </summary>
+            <param name="hImage">A handle to an image opened by the WIMLoadImage function.</param>
+            <param name="hWim">
+                A handle to a .wim file returned by the WIMCreateFile function. This handle must have
+                WIM_GENERIC_WRITE access to accept the exported image. Split .wim files are not supported.
+            </param>
+            <param name="dwFlags">Specifies how the image will be exported to the destination .wim file.</param>
+            <returns>
+                If the function succeeds, the return value is nonzero.
+                If the function fails, the return value is zero. To obtain extended error information, call the GetLastError
+                function.
+            </returns>
+            <remarks>
+                You must call the WIMSetTemporaryPath function for both the source and the destination .wim files before calling
+                the WIMExportImage function.
+                If zero is passed in for the dwFlags parameter and the image is already stored in the destination, the function
+                will return FALSE and set the LastError to ERROR_ALREADY_EXISTS.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.Wim.WimgApi.NativeMethods.WIMExtractImagePath(Microsoft.Wim.WimHandle,System.String,System.String,System.UInt32)">
+            <summary>
+                Extracts a file from within a Windows® image (.wim) file to a specified location.
+            </summary>
+            <param name="hImage">A handle to an image opened by the WIMLoadImage function.</param>
+            <param name="pszImagePath">A pointer to a file path inside the image.</param>
+            <param name="pszDestinationPath">
+                A pointer to the full file path of the directory where the image path is to be
+                extracted.
+            </param>
+            <param name="dwExtractFlags">Reserved. Must be zero.</param>
+            <returns>
+                If the function succeeds, the return value is nonzero. If the function fails, the return value is zero. To
+                obtain extended error information, call the GetLastError function.
+            </returns>
+        </member>
+        <member name="M:Microsoft.Wim.WimgApi.NativeMethods.WIMGetAttributes(Microsoft.Wim.WimHandle,System.IntPtr,System.UInt32)">
+            <summary>
+                Returns the number of volume images stored in an image file.
+            </summary>
+            <param name="hWim">The handle to a .wim file returned by WIMCreateFile.</param>
+            <param name="pWimInfo">A pointer to a WIM_INFO structure that is returned with information about the .wim file.</param>
+            <param name="cbWimInfo">A DWORD value indicating the size of the pWimInfo buffer in which it passes.</param>
+            <returns>
+                If the function succeeds, then the return value is non-zero.
+                If the function fails, then the return value is zero. To obtain extended error information, call GetLastError.
+            </returns>
+        </member>
+        <member name="M:Microsoft.Wim.WimgApi.NativeMethods.WIMGetImageCount(Microsoft.Wim.WimHandle)">
+            <summary>
+                Returns the number of volume images stored in a Windows® image (.wim) file.
+            </summary>
+            <param name="hWim">A handle to a .wim file returned by the WIMCreateFile function.</param>
+            <returns>
+                The return value is the number of images in the .wim file. If this value is zero, then the image file is
+                invalid or does not contain any images that can be applied.
+            </returns>
+        </member>
+        <member name="M:Microsoft.Wim.WimgApi.NativeMethods.WIMGetImageInformation(Microsoft.Wim.WimHandle,System.IntPtr@,System.UInt32@)">
+            <summary>
+                Returns information about an image within the .wim (Windows image) file.
+            </summary>
+            <param name="hImage">A handle returned by the WIMCreateFile, WIMLoadImage, or WIMCaptureImage function.</param>
+            <param name="ppvImageInfo">
+                A pointer to a buffer that receives the address of the XML information about the volume
+                image. When the function returns, this value contains the address of an allocated buffer, containing XML
+                information about the volume image.
+            </param>
+            <param name="pcbImageInfo">
+                A pointer to a variable that specifies the size, in bytes, of the buffer pointed to by the
+                value of the ppvImageInfo parameter.
+            </param>
+            <returns></returns>
+            <remarks>
+                When the function succeeds, then the data describing the image is in Unicode XML format. Use the LocalFree
+                function to free the memory pointed to by the ppvImageInfo parameter when no longer needed.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.Wim.WimgApi.NativeMethods.WIMGetMessageCallbackCount(Microsoft.Wim.WimHandle)">
+            <summary>
+                Returns the count of callback routines currently registered by the imaging library.
+            </summary>
+            <param name="hWim">The handle to a .wim file returned by WIMCreateFile.</param>
+            <returns>The return value is the number of message callback functions currently registered.</returns>
+        </member>
+        <member name="M:Microsoft.Wim.WimgApi.NativeMethods.WIMGetMountedImageHandle(System.String,System.UInt32,Microsoft.Wim.WimHandle@,Microsoft.Wim.WimHandle@)">
+            <summary>
+                Returns a WIM handle and an image handle corresponding to a mounted image directory.
+            </summary>
+            <param name="pszMountPath">
+                A pointer to the full file path of the directory to which the .wim file has been mounted.
+                This parameter is required and cannot be NULL.
+            </param>
+            <param name="dwFlags">Specifies how the file is to be treated and what features are to be used.</param>
+            <param name="phWimHandle">
+                Pointer to receive a WIM handle corresponding to the image mounted at the specified path.
+                This parameter is required and cannot be NULL.
+            </param>
+            <param name="phImageHandle">
+                Pointer to receive an WIM handle corresponding to the image mounted at the specified path.
+                This parameter is required and cannot be NULL.
+            </param>
+            <returns>
+                Returns TRUE and sets the LastError to ERROR_SUCCESS on the successful completion of this function. Returns
+                FALSE in case of a failure and sets the LastError to the appropriate Win32® error value.
+            </returns>
+            <remarks>Use the WIMUnmountImageHandle function to unmount the image from the mount directory.</remarks>
+        </member>
+        <member name="M:Microsoft.Wim.WimgApi.NativeMethods.WIMGetMountedImageInfo(Microsoft.Wim.WimMountedImageInfoLevels,System.UInt32@,System.IntPtr,System.UInt32,System.UInt32@)">
+            <summary>
+                Returns a list of images that are currently mounted.
+            </summary>
+            <param name="fInfoLevelId">A class of attribute information to retrieve.</param>
+            <param name="pdwImageCount">A pointer to a DWORD that receives the number of mounted images.</param>
+            <param name="pMountInfo">
+                Pointer to a variable that receives the array of mounted image structures. The size of the
+                information written varies depending on the type of structured defined by the fInfoLevelId parameter.
+            </param>
+            <param name="cbMountInfoLength">The size of the buffer pointed to by the pMountInfo parameter, in bytes.</param>
+            <param name="pcbReturnLength">
+                A pointer to a variable in which the function returns the size of the requested
+                information. If the function was successful, this is the size of the information written to the buffer pointed to
+                by the pMountInfo parameter, but if the buffer was too small; this is the minimum size of buffer needed to receive
+                the information successfully.
+            </param>
+            <returns>
+                If the function succeeds, then the return value is nonzero. If the function fails, then the return value is
+                zero. To obtain extended error information, call the GetLastError function. If the buffer specified by the
+                cbMountInfoLength parameter is not large enough to hold the data, the function set LastError to
+                ERROR_INSUFFICIENT_BUFFER and stores the required buffer size in the variable pointed to by pcbReturnLength.
+            </returns>
+        </member>
+        <member name="M:Microsoft.Wim.WimgApi.NativeMethods.WIMGetMountedImageInfoFromHandle(Microsoft.Wim.WimHandle,Microsoft.Wim.WimMountedImageInfoLevels,System.IntPtr,System.UInt32,System.UInt32@)">
+            <summary>
+                Queries the state of a mounted image handle.
+            </summary>
+            <param name="hImage">A handle to an image that has been mounted</param>
+            <param name="fInfoLevelId">A class of attribute information to retrieve.</param>
+            <param name="pMountInfo">
+                Pointer to a variable that receives mounted image structures. The size of the information
+                written varies depending on the type of structured defined by the fInfoLevelId.
+            </param>
+            <param name="cbMountInfoLength">The size of the buffer pointed to by the pMountInfo parameter, in bytes</param>
+            <param name="pcbReturnLength">
+                A pointer to a variable which contains the result of a function call that returns the
+                size of the requested information. If the function was successful, this is the size of the information written to
+                the buffer pointed to by the pMountInfo parameter; if the buffer was too small, then this is the minimum size of
+                buffer needed to receive the information successfully.
+            </param>
+            <returns>
+                If the function succeeds, then the return value is nonzero. If the function fails, then the return value is
+                zero. To obtain extended error information, call the GetLastError function. If the buffer specified by the
+                cbMountInfoLength parameter is not large enough to hold the data, the function sets the value of LastError to
+                ERROR_INSUFFICIENT_BUFFER and stores the required buffer size in the variable pointed to by pcbReturnLength.
+            </returns>
+        </member>
+        <member name="M:Microsoft.Wim.WimgApi.NativeMethods.WIMLoadImage(Microsoft.Wim.WimHandle,System.UInt32)">
+            <summary>
+                Loads a volume image from a Windows® image (.wim) file.
+            </summary>
+            <param name="hWim">A handle to a .wim file returned by the WIMCreateFile function.</param>
+            <param name="dwImageIndex">Specifies the one-based index of the image to load. An image file may store multiple images.</param>
+            <returns>
+                If the function succeeds, then the return value is a handle to an object representing the volume image. If the
+                function fails, then the return value is NULL. To obtain extended error information, call the GetLastError
+                function.
+            </returns>
+            <remarks>
+                You must call the WIMSetTemporaryPath function before calling the WIMLoadImage function so the image metadata can
+                be extracted and processed from the temporary location.
+                Use the WIMCloseHandle function to unload the volume image.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.Wim.WimgApi.NativeMethods.WIMMountImage(System.String,System.String,System.UInt32,System.String)">
+            <summary>
+                Mounts an image in a Windows® image (.wim) file to the specified directory.
+            </summary>
+            <param name="pszMountPath">
+                A pointer to the full file path of the directory to which the .wim file has to be mounted.
+                This parameter is required and cannot be NULL. The specified path must not exceed MAX_PATH characters in length.
+            </param>
+            <param name="pszWimFileName">
+                A pointer to the full file name of the .wim file that has to be mounted. This parameter is
+                required and cannot be NULL.
+            </param>
+            <param name="dwImageIndex">An index of the image in the .wim file that has to be mounted.</param>
+            <param name="pszTempPath">
+                A pointer to the full file path to the temporary directory in which changes to the .wim file
+                can be tracked. If this parameter is NULL, the image will not be mounted for edits.
+            </param>
+            <returns>
+                Returns TRUE and sets the LastError to ERROR_SUCCESS on the successful completion of this function. Returns
+                FALSE in case of a failure and sets the LastError to the appropriate Win32® error value.
+            </returns>
+            <remarks>
+                The WIMMountImage function maps the contents of the given image in a .wim file to the specified mount directory.
+                After the successful completion of this operation, users or applications can access the contents of the image
+                mapped under the mount directory.
+                Use the WIMUnmountImage function to unmount the image from the mount directory.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.Wim.WimgApi.NativeMethods.WIMMountImageHandle(Microsoft.Wim.WimHandle,System.String,System.UInt32)">
+            <summary>
+                Mounts an image in a Windows® image (.wim) file to the specified directory.
+            </summary>
+            <param name="hImage">
+                A handle to a volume image returned by the WIMLoadImage or WIMCaptureImage function. The WIM file
+                must have been opened with WIM_GENERIC_MOUNT flag in call to WIMCreateFile.
+            </param>
+            <param name="pszMountPath">
+                A pointer to the full file path of the directory to which the .wim file has been mounted.
+                This parameter is required and cannot be NULL. The specified path must not exceed MAX_PATH characters in length.
+            </param>
+            <param name="dwMountFlags">Specifies how the file is to be treated and what features are to be used.</param>
+            <returns>
+                Returns TRUE and sets the LastError to ERROR_SUCCESS on the successful completion of this function. Returns
+                FALSE in case of a failure and sets the LastError to the appropriate Win32® error value.
+            </returns>
+            <remarks>
+                The WIMMountImageHandle function maps the contents of the given image in a .wim file to the specified mount
+                directory. After the successful completion of this operation, users or applications can access the contents of the
+                image mapped under the mount directory. The WIM file containing the image must be opened with WIM_GENERIC_MOUNT
+                access. Use the WIMUnmountImageHandle function to unmount the image from the mount directory.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.Wim.WimgApi.NativeMethods.WIMRegisterLogFile(System.String,System.UInt32)">
+            <summary>
+                Registers a log file for debugging or tracing purposes into the current WIMGAPI session.
+            </summary>
+            <param name="pszLogFile">
+                A pointer to the full file path of the file to receive debug or tracing information. This
+                parameter is required and cannot be NULL.
+            </param>
+            <param name="dwFlags">Reserved. Must be zero.</param>
+            <returns>
+                Returns TRUE and sets the LastError to ERROR_SUCCESS on the successful completion of this function. Returns
+                FALSE in case of a failure and sets the LastError to the appropriate Win32® error value.
+            </returns>
+        </member>
+        <member name="M:Microsoft.Wim.WimgApi.NativeMethods.WIMRegisterMessageCallback(Microsoft.Wim.WimHandle,Microsoft.Wim.WimgApi.WIMMessageCallback,System.IntPtr)">
+            <summary>
+                Registers a function to be called with imaging-specific data.
+            </summary>
+            <param name="hWim">The handle to a .wim file returned by WIMCreateFile.</param>
+            <param name="fpMessageProc">
+                A pointer to an application-defined callback function. For more information, see the
+                WIMMessageCallback function.
+            </param>
+            <param name="pvUserData">A pointer that specifies an application-defined value to be passed to the callback function.</param>
+            <returns>
+                If the function succeeds, then the return value is the zero-based index of the callback. If the function
+                fails, then the return value is INVALID_CALLBACK_VALUE (0xFFFFFFFF). To obtain extended error information, call the
+                GetLastError function.
+            </returns>
+            <remarks>
+                If a WIM handle is specified, the callback function receives messages for only that WIM file. If no handle is
+                specified, then the callback function receives messages for all image handles.
+                Call the WIMUnregisterMessageCallback function when the callback function is no longer required.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.Wim.WimgApi.NativeMethods.WIMRemountImage(System.String,System.UInt32)">
+            <summary>
+                Reactivates a mounted image that was previously mounted to the specified directory.
+            </summary>
+            <param name="pszMountPath">
+                A pointer to the full file path of the directory to which the .wim file must be remounted.
+                This parameter is required and cannot be NULL.
+            </param>
+            <param name="dwFlags">Reserved. Must be zero.</param>
+            <returns>
+                Returns TRUE and sets the LastError to ERROR_SUCCESS on the successful completion of this function. Returns
+                FALSE in case of a failure and sets the LastError to the appropriate Win32® error value.
+            </returns>
+            <remarks>
+                The WIMRemountImage function maps the contents of the given image in a .wim file to the specified mount
+                directory. After the successful completion of this operation, users or applications can access the contents of the
+                image mapped under the mount directory. Use the WIMUnmountImage function to unmount the image from the mount
+                directory.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.Wim.WimgApi.NativeMethods.WIMSetBootImage(Microsoft.Wim.WimHandle,System.UInt32)">
+            <summary>
+                Marks the image with the given image index as bootable.
+            </summary>
+            <param name="hWim">A handle to a Windows® image (.wim) file returned by the WIMCreateFile function.</param>
+            <param name="dwImageIndex">The one-based index of the image to load. An image file can store multiple images.</param>
+            <returns>
+                If the function succeeds, then the return value is nonzero.
+                If the function fails, then the return value is zero. To obtain extended error information, call the GetLastError
+                function.
+            </returns>
+            <remarks>
+                If the input value for the dwImageIndex is zero, then none of the images in the .wim file are marked for boot.
+                At any time, only one image in a .wim file can be set to be bootable.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.Wim.WimgApi.NativeMethods.WIMSetImageInformation(Microsoft.Wim.WimHandle,System.IntPtr,System.UInt32)">
+            <summary>
+                Stores information about an image in the Windows® image (.wim) file.
+            </summary>
+            <param name="hImage">A handle returned by the WIMCreateFile, WIMLoadImage, or WIMCaptureImage functions.</param>
+            <param name="pvImageInfo">A pointer to a buffer that contains information about the volume image.</param>
+            <param name="cbImageInfo">Specifies the size, in bytes, of the buffer pointed to by the pvImageInfo parameter.</param>
+            <returns>
+                If the function succeeds, then the return value is nonzero.
+                If the function fails, then the return value is zero. To obtain extended error information, call the GetLastError
+                function.
+            </returns>
+            <remarks>
+                The data buffer being passed into the function must be the memory representation of a Unicode XML file. Calling
+                this function replaces any customized image data, so, to preserve existing XML information, call the
+                WIMGetImageInformation function and append or edit the data.
+                If the input handle is from the WIMCreateFile function, then the XML data must be enclosed by <WIM></WIM> tags. If
+                the input handle is from the WIMLoadImage or WIMCaptureImage functions, then the XML data must be enclosed by
+                <IMAGE></IMAGE> tags.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.Wim.WimgApi.NativeMethods.WIMSetReferenceFile(Microsoft.Wim.WimHandle,System.String,System.UInt32)">
+            <summary>
+                Enables the WIMApplyImage and WIMCaptureImage functions to use alternate .wim files for file resources. This can
+                enable optimization of storage when multiple images are captured with similar data.
+            </summary>
+            <param name="hWim">A handle to a .wim (Windows image) file returned by the WIMCreateFile function.</param>
+            <param name="pszPath">
+                A pointer to a null-terminated string containing the path of the .wim file to be added to the
+                reference list.
+            </param>
+            <param name="dwFlags">
+                Specifies how the .wim file is added to the reference list. This parameter must include one of
+                the following two values.
+            </param>
+            <returns>
+                If the function succeeds, then the return value is nonzero.
+                If the function fails, then the return value is zero. To obtain extended error information, call the GetLastError
+                function.
+            </returns>
+            <remarks>
+                If NULL is passed in for the pszPath parameter and WIM_REFERENCE_REPLACE is passed for the dwFlags parameter,
+                then the reference list is completely cleared, and no file resources are extracted during the WIMApplyImage
+                function.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.Wim.WimgApi.NativeMethods.WIMSetTemporaryPath(Microsoft.Wim.WimHandle,System.String)">
+            <summary>
+                Sets the location where temporary imaging files are to be stored.
+            </summary>
+            <param name="hWim">A handle to a .wim file returned by the WIMCreateFile function.</param>
+            <param name="pszPath">
+                A pointer to a null-terminated string, indicating the path where temporary image (.wim) files are
+                to be stored during capture or application. This is the directory where the image is captured or applied.
+            </param>
+            <returns>
+                If the function succeeds, then the return value is nonzero.
+                If the function fails, then the return value is zero. To obtain extended error information, call GetLastError.
+            </returns>
+        </member>
+        <member name="M:Microsoft.Wim.WimgApi.NativeMethods.WIMSplitFile(Microsoft.Wim.WimHandle,System.String,System.Int64@,System.UInt32)">
+            <summary>
+                Enables a large Windows® image (.wim) file to be split into smaller parts for replication or storage on smaller
+                forms of media.
+            </summary>
+            <param name="hWim">A handle to a .wim file returned by WIMCreateFile.</param>
+            <param name="pszPartPath">
+                A pointer to a null-terminated string containing the path of the first file piece of the
+                spanned set.
+            </param>
+            <param name="pliPartSize">
+                A pointer to a LARGE_INTEGER, specifying the size of the initial piece of the spanned set.
+                This value will also be the default size used for subsequent pieces, unless altered by a response to the
+                WIM_MSG_SPLIT message. If the size specified is insufficient to create the first part of the spanned .wim file, the
+                value is filled in with the minimum space required. If a single file is larger than the value specified, one of the
+                split .swm files that results will be larger than the specified value in order to accommodate the large file. See
+                Remarks.
+            </param>
+            <param name="dwFlags">Reserved. Must be zero.</param>
+            <returns>
+                If the function succeeds, then the return value is nonzero.
+                If the function fails, then the return value is zero. To obtain extended error information, call GetLastError.
+            </returns>
+            <remarks>
+                To obtain the minimum space required for the initial .wim file, set the contents of the pliPartSize parameter to
+                zero and call the WIMSplitFile function. The function will return FALSE and set the LastError function to
+                ERROR_MORE_DATA, and the contents of the pliPartSize parameter will be set to the minimum space required.
+                This function creates many parts that are required to contain the resources of the original .wim file. The calling
+                application may alter the path and size of subsequent pieces by responding to the WIM_MSG_SPLIT message.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.Wim.WimgApi.NativeMethods.WIMUnmountImage(System.String,System.String,System.UInt32,System.Boolean)">
+            <summary>
+                Unmounts a mounted image in a Windows® image (.wim) file from the specified directory.
+            </summary>
+            <param name="pszMountPath">
+                A pointer to the full file path of the directory to which the .wim file was mounted. This
+                parameter is required and cannot be NULL.
+            </param>
+            <param name="pszWimFileName">
+                A pointer to the full file name of the .wim file that must be unmounted. This parameter is
+                required and cannot be NULL.
+            </param>
+            <param name="dwImageIndex">Specifies the index of the image in the .wim file that must be unmounted.</param>
+            <param name="bCommitChanges">
+                A flag that indicates whether changes (if any) to the .wim file must be committed before
+                unmounting the .wim file. This flag has no effect if the .wim file was mounted not to enable edits.
+            </param>
+            <returns>
+                Returns TRUE and sets the LastError to ERROR_SUCCESS on the successful completion of this function. Returns
+                FALSE in case of a failure and sets the LastError to the appropriate Win32® error value.
+            </returns>
+            <remarks>
+                The WIMUnmountImage function unmaps the contents of the given image in the .wim file from the specified mount
+                directory. After the successful completion of this operation, users or applications will not be able to access the
+                contents of the image previously mapped under the mount directory.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.Wim.WimgApi.NativeMethods.WIMUnmountImageHandle(Microsoft.Wim.WimHandle,System.UInt32)">
+            <summary>
+                Unmounts an image from a Windows® image (.wim) that was previously mounted with the WIMMountImageHandle function.
+            </summary>
+            <param name="hImage">A handle to an image previously mounted with WIMMountImageHandle.</param>
+            <param name="dwUnmountFlags">Reserved. Must be zero.</param>
+            <returns>
+                Returns TRUE and sets the LastError to ERROR_SUCCESS on the successful completion of this function. Returns
+                FALSE in case of a failure and sets the LastError to the appropriate Win32® error value.
+            </returns>
+            <remarks>
+                The WIMUnmountImageHandle function unmaps the contents of the given image in the .wim file from the specified
+                mount directory. After the successful completion of this operation, users or applications will not be able to
+                access the contents of the image previously mapped under the mount directory.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.Wim.WimgApi.NativeMethods.WIMUnregisterLogFile(System.String)">
+            <summary>
+                Unregisters a log file for debugging or tracing purposes from the current WIMGAPI session.
+            </summary>
+            <param name="pszLogFile">
+                The path to a log file previously specified in a call to the WIMRegisterLogFile function. This
+                parameter is required and cannot be NULL.
+            </param>
+            <returns>
+                Returns TRUE and sets the LastError to ERROR_SUCCESS on the successful completion of this function. Returns
+                FALSE in case of a failure and sets the LastError to the appropriate Win32® error value.
+            </returns>
+        </member>
+        <member name="M:Microsoft.Wim.WimgApi.NativeMethods.WIMUnregisterMessageCallback(Microsoft.Wim.WimHandle,Microsoft.Wim.WimgApi.WIMMessageCallback)">
+            <summary>
+                Unregisters a function from being called with imaging-specific data.
+            </summary>
+            <param name="hWim">The handle to a .wim file returned by WIMCreateFile.</param>
+            <param name="fpMessageProc">
+                A pointer to the application-defined callback function to unregister. Specify NULL to
+                unregister all callback functions.
+            </param>
+            <returns>
+                If the function succeeds, then the return value is nonzero.
+                If the function fails, then the return value is zero. To obtain extended error information, call the GetLastError
+                function.
+            </returns>
+        </member>
+        <member name="T:Microsoft.Wim.WimgApi.WIM_INFO">
+            <summary>
+                Contains information retrieved by the WIMGetAttributes function.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimgApi.WIM_INFO.WimPath">
+            <summary>
+                Specifies the full path to the .wim file.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimgApi.WIM_INFO.Guid">
+            <summary>
+                Specifies a GUID structure containing the unique identifier for the Windows® image (.wim) file.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimgApi.WIM_INFO.ImageCount">
+            <summary>
+                Specifies the number of images contained in the .wim file. This value is also returned by the WIMGetImageCount
+                function.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimgApi.WIM_INFO.CompressionType">
+            <summary>
+                Specifies the method of compression used to compress resources in the .wim file. See the WIMCreateFile function for
+                the initial compression types.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimgApi.WIM_INFO.PartNumber">
+            <summary>
+                Specifies the part number of the current .wim file in a spanned set. This value should be one, unless the data of
+                the .wim file was originally split by the WIMSplitFile function.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimgApi.WIM_INFO.TotalParts">
+            <summary>
+                Specifies the total number of .wim file parts in a spanned set. This value must be one, unless the data of the .wim
+                file was originally split via the WIMSplitFile function.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimgApi.WIM_INFO.BootIndex">
+            <summary>
+                Specifies the index of the bootable image in the .wim file. If this value is zero, then there are no bootable
+                images available. To set a bootable image, call the WIMSetBootImage function.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimgApi.WIM_INFO.WimAttributes">
+            <summary>
+                Specifies how the file is treated and what features will be used.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimgApi.WIM_INFO.WimFlagsAndAttr">
+            <summary>
+                Specifies the flags used during a WIMCreateFile function.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Wim.WimgApi.WIM_MOUNT_INFO_LEVEL0">
+            <summary>
+                Contains information retrieved by the WIMGetMountedImageInfo function.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimgApi.WIM_MOUNT_INFO_LEVEL0.WimPath">
+            <summary>
+                Specifies the full path to the .wim file.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimgApi.WIM_MOUNT_INFO_LEVEL0.MountPath">
+            <summary>
+                Specifies the full path to the directory where the image is mounted.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimgApi.WIM_MOUNT_INFO_LEVEL0.ImageIndex">
+            <summary>
+                Specifies the image index within the .wim file specified in WimPath.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimgApi.WIM_MOUNT_INFO_LEVEL0.MountedForRW">
+            <summary>
+                Specifies if the image was mounted with support for saving changes.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Wim.WimgApi.WIM_MOUNT_INFO_LEVEL1">
+            <summary>
+                Contains information retrieved by the WIMGetMountedImageList function.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimgApi.WIM_MOUNT_INFO_LEVEL1.WimPath">
+            <summary>
+                Specifies the full path to the .wim file.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimgApi.WIM_MOUNT_INFO_LEVEL1.MountPath">
+            <summary>
+                Specifies the full path to the directory where the image is mounted.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimgApi.WIM_MOUNT_INFO_LEVEL1.ImageIndex">
+            <summary>
+                Specifies the image index within the .wim file specified in WimPath.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimgApi.WIM_MOUNT_INFO_LEVEL1.MountFlags">
+            <summary>
+                Specifies the current state of the mount point.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Wim.WimgApi.WIM_MOUNT_LIST">
+            <summary>
+                Contains information retrieved by the WIMGetMountedImages function.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimgApi.WIM_MOUNT_LIST.WimPath">
+            <summary>
+                Specifies the full path to the .wim file.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimgApi.WIM_MOUNT_LIST.MountPath">
+            <summary>
+                Specifies the full path to the directory where the image is mounted.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimgApi.WIM_MOUNT_LIST.ImageIndex">
+            <summary>
+                Specifies the image index within the .wim file specified in WimPath.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimgApi.WIM_MOUNT_LIST.MountedForRW">
+            <summary>
+                Specifies if the image was mounted with support for saving changes.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Wim.WimgApi.WIMMessageCallback">
+            <summary>
+                An application-defined function used with the WIMRegisterMessageCallback or WIMUnregisterMessageCallback functions.
+            </summary>
+            <param name="MessageId">Specifies the type of message.</param>
+            <param name="wParam">
+                Specifies additional message information. The contents of this parameter depend on the value of
+                the dwMessageId parameter.
+            </param>
+            <param name="lParam">
+                Specifies additional message information. The contents of this parameter depend on the value of
+                the dwMessageId parameter.
+            </param>
+            <param name="UserData">
+                A handle that specifies the user-defined value passed to the WIMRegisterMessageCallback
+                function.
+            </param>
+            <returns>
+                To indicate success and to enable other subscribers to process the message return WIM_MSG_SUCCESS. To prevent
+                other subscribers from receiving the message, return WIM_MSG_DONE. To cancel an image apply or image capture,
+                return WIM_MSG_ABORT_IMAGE when handling the WIM_MSG_PROCESS message.
+            </returns>
+            <remarks>
+                Call the WIMUnregisterMessageCallback function with the result index when the WIMMessageCallback function is no
+                longer required.
+                Do not use WIM_MSG_ABORT_IMAGE to cancel the process as a shortcut method of extracting a single file. Windows®
+                Imaging API is multi-threaded and aborting a process will cancel all background threads, which may include the
+                single file you want to extract. If you want to extract a single file, use the WIMExtractImagePath function.
+            </remarks>
+        </member>
+        <member name="T:Microsoft.Wim.WimHandle">
+            <summary>
+                Represents a handle to a Windows® image (.wim) file or an image inside of a .wim file.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimHandle.Null">
+            <summary>
+                Represents a <c>null</c> handle.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Wim.WimHandle.#ctor">
+            <summary>
+                Initializes a new instance of the WimHandle class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Wim.WimHandle.ReleaseHandle">
+            <summary>
+                Frees the handle.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Microsoft.Wim.WimInfo">
+            <summary>
+                Represents information about a Windows® image (.wim).
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimInfo._wimInfo">
+            <summary>
+                The native <see cref="T:Microsoft.Wim.WimgApi.WIM_INFO" /> struct that contains information about the .wim file.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Wim.WimInfo.#ctor(System.IntPtr)">
+            <summary>
+                Initializes a new instance of the WimInfo class.
+            </summary>
+            <param name="wimInfoPtr">A pointer to a native <see cref="T:Microsoft.Wim.WimgApi.WIM_INFO" /> struct.</param>
+        </member>
+        <member name="M:Microsoft.Wim.WimInfo.#ctor(Microsoft.Wim.WimgApi.WIM_INFO)">
+            <summary>
+                Initializes a new instance of the WimInfo class.
+            </summary>
+            <param name="wimInfo">A <see cref="T:Microsoft.Wim.WimgApi.WIM_INFO" /> that contains information about the .wim file.</param>
+        </member>
+        <member name="P:Microsoft.Wim.WimInfo.Attributes">
+            <summary>
+                Gets a <see cref="T:Microsoft.Wim.WimInfoAttributes" /> value that indicates how the file is treated and what features will be
+                used.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Wim.WimInfo.BootIndex">
+            <summary>
+                Gets the index of the bootable image in the .wim file. If this value is zero, then there are no bootable images
+                available. To set a bootable image, call the WIMSetBootImage function.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Wim.WimInfo.CompressionType">
+            <summary>
+                Gets a <see cref="T:Microsoft.Wim.WimCompressionType" /> value that indicates the method of compression used to compress resources
+                in the .wim file.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Wim.WimInfo.CreateOptions">
+            <summary>
+                Gets a <see cref="T:Microsoft.Wim.WimCreateFileOptions" /> value that indicates the options used when the .wim file was created.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Wim.WimInfo.Guid">
+            <summary>
+                Gets the unique identifier for the Windows® image (.wim) file.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Wim.WimInfo.ImageCount">
+            <summary>
+                Gets the number of images contained in the .wim file.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Wim.WimInfo.PartNumber">
+            <summary>
+                Gets the part number of the current .wim file in a spanned set.  This value should be one, unless the data of the
+                .wim file was originally split by the <see cref="M:Microsoft.Wim.WimgApi.SplitFile(Microsoft.Wim.WimHandle,System.String,System.Int64)" /> method.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Wim.WimInfo.Path">
+            <summary>
+                Gets the full path to the .wim file.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Wim.WimInfo.TotalParts">
+            <summary>
+                Gets the total number of .wim file parts in a spanned set. This value must be one, unless the data of the .wim file
+                was originally split via the <see cref="M:Microsoft.Wim.WimgApi.SplitFile(Microsoft.Wim.WimHandle,System.String,System.Int64)" /> method.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Wim.WimMessage`2">
+            <summary>
+                Represents a base class for messages sent by the WIMGAPI.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Wim.WimMessage`2.#ctor(System.IntPtr,System.IntPtr)">
+            <summary>
+                Initializes a new instance of the WimMessage class.
+            </summary>
+            <param name="wParam">An IntPtr object from the native callback function.</param>
+            <param name="lParam">An IntPtr object from the native callback function.</param>
+        </member>
+        <member name="P:Microsoft.Wim.WimMessage`2.lParam">
+            <summary>
+                The lParam object from the native callback function.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Wim.WimMessage`2.Param1">
+            <summary>
+                The marshaled value of wParam.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Wim.WimMessage`2.Param2">
+            <summary>
+                The marshaled value of lParam.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Wim.WimMessage`2.wParam">
+            <summary>
+                The wParam object from the native callback function.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Wim.WimMessageAlignment">
+            <summary>
+                Represents a message that enables the caller to align a file resource on a particular alignment boundary.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Wim.WimMessageAlignment.#ctor(System.IntPtr,System.IntPtr)">
+            <summary>
+                Initializes a new instance of the WimMessageAlignment class.
+            </summary>
+            <param name="wParam">The wParam object from the native callback function.</param>
+            <param name="lParam">The lParam object from the native callback function.</param>
+        </member>
+        <member name="P:Microsoft.Wim.WimMessageAlignment.AlignmentBoundary">
+            <summary>
+                Gets or sets a value indicating the alignment boundary to be used when storing the file resource.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Wim.WimMessageAlignment.Path">
+            <summary>
+                Gets the full path of the file that failed to be captured or applied.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Wim.WimMessageCleanupScanningDrive">
+            <summary>
+                Represents a message that indicates a drive is being scanned during a cleanup operation.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Wim.WimMessageCleanupScanningDrive.#ctor(System.IntPtr,System.IntPtr)">
+            <summary>
+                Initializes a new instance of the WimMessageCleanupScanningDrive class.
+            </summary>
+            <param name="wParam">The wParam object from the native callback function.</param>
+            <param name="lParam">The lParam object from the native callback function.</param>
+        </member>
+        <member name="P:Microsoft.Wim.WimMessageCleanupScanningDrive.DriveLetter">
+            <summary>
+                Gets the driver letter being scanned during a cleanup operation.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Wim.WimMessageCleanupUnmountingImage">
+            <summary>
+                Represents a message that indicates an image is being unmounted as part of the cleanup process.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Wim.WimMessageCleanupUnmountingImage.#ctor(System.IntPtr,System.IntPtr)">
+            <summary>
+                Initializes a new instance of the WimMessageCleanupUnmountingImage class.
+            </summary>
+            <param name="wParam">The wParam object from the native callback function.</param>
+            <param name="lParam">The lParam object from the native callback function.</param>
+        </member>
+        <member name="P:Microsoft.Wim.WimMessageCleanupUnmountingImage.IsComplete">
+            <summary>
+                Gets a boolean value that indicates whether the operation has completed.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Wim.WimMessageCleanupUnmountingImage.MountPath">
+            <summary>
+                Gets the path of the image being unmounted.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Wim.WimMessageCompress">
+            <summary>
+                Represents a message that enables the caller to prevent a file resource from being compressed during a capture.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Wim.WimMessageCompress.#ctor(System.IntPtr,System.IntPtr)">
+            <summary>
+                Initializes a new instance of the WimMessageCompress class.
+            </summary>
+            <param name="wParam">The wParam object from the native callback function.</param>
+            <param name="lParam">The lParam object from the native callback function.</param>
+        </member>
+        <member name="P:Microsoft.Wim.WimMessageCompress.Compress">
+            <summary>
+                Gets or sets a boolean indicating whether the file should be compressed.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Wim.WimMessageCompress.Path">
+            <summary>
+                Gets the full path of the file to be compressed.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Wim.WimMessageError">
+            <summary>
+                Represents a message to alert the caller that an error occurred while capturing or applying an image.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Wim.WimMessageError.#ctor(System.IntPtr,System.IntPtr)">
+            <summary>
+                Initializes a new instance of the WimMessageError class.
+            </summary>
+            <param name="wParam">The wParam object from the native callback function.</param>
+            <param name="lParam">The lParam object from the native callback function.</param>
+        </member>
+        <member name="P:Microsoft.Wim.WimMessageError.Path">
+            <summary>
+                Gets the full file path of the file that failed to be captured or applied.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Wim.WimMessageError.Win32ErrorCode">
+            <summary>
+                Gets the Win32® error code indicating the cause of the failure.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Wim.WimMessageFileInfo">
+            <summary>
+                Represents a message to provide the caller with information about the file being applied during an apply operation.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Wim.WimMessageFileInfo.#ctor(System.IntPtr,System.IntPtr)">
+            <summary>
+                Initializes a new instance of the WimMessageFileInfo class.
+            </summary>
+            <param name="wParam">The wParam object from the native callback function.</param>
+            <param name="lParam">The lParam object from the native callback function.</param>
+        </member>
+        <member name="P:Microsoft.Wim.WimMessageFileInfo.FileInfo">
+            <summary>
+                Gets a <see cref="T:Microsoft.Wim.WimFileInfo" /> object containing information about the file being applied.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Wim.WimMessageFileInfo.Path">
+            <summary>
+                Gets the full file path of the file or directory to be potentially captured or applied.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Wim.WimMessageImageAlreadyMounted">
+            <summary>
+                Represents a message that indicates an image has been mounted to multiple locations. Only one mount location can
+                have changes written back to the .wim file.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Wim.WimMessageImageAlreadyMounted.#ctor(System.IntPtr,System.IntPtr)">
+            <summary>
+                Initializes a new instance of the WimMessageImageAlreadyMounted class.
+            </summary>
+            <param name="wParam">The wParam object from the native callback function.</param>
+            <param name="lParam">The lParam object from the native callback function.</param>
+        </member>
+        <member name="P:Microsoft.Wim.WimMessageImageAlreadyMounted.Path">
+            <summary>
+                Gets the full file path of the existing mounted image.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Wim.WimMessageInformation">
+            <summary>
+                Represents a message to alert the caller that an error occurred while capturing or applying an image.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Wim.WimMessageInformation.#ctor(System.IntPtr,System.IntPtr)">
+            <summary>
+                Initializes a new instance of the WimMessageInformation class.
+            </summary>
+            <param name="wParam">The wParam object from the native callback function.</param>
+            <param name="lParam">The lParam object from the native callback function.</param>
+        </member>
+        <member name="P:Microsoft.Wim.WimMessageInformation.Path">
+            <summary>
+                Gets the full file path of the file with the failure during the image capture or apply operation.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Wim.WimMessageInformation.Win32ErrorCode">
+            <summary>
+                Gets the Win32® error code indicating the cause of the error.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Wim.WimMessageMountCleanupProgress">
+            <summary>
+                Represents a message that indicates progress during an image-cleanup operation.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Wim.WimMessageMountCleanupProgress.#ctor(System.IntPtr,System.IntPtr)">
+            <summary>
+                Initializes a new instance of the WimMessageMountCleanupProgress class.
+            </summary>
+            <param name="wParam">The wParam object from the native callback function.</param>
+            <param name="lParam">The lParam object from the native callback function.</param>
+        </member>
+        <member name="P:Microsoft.Wim.WimMessageMountCleanupProgress.EstimatedTimeRemaining">
+            <summary>
+                Gets a <see cref="T:System.TimeSpan" /> containing the estimated amount of time until the cleanup operation is complete.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Wim.WimMessageMountCleanupProgress.PercentComplete">
+            <summary>
+                Gets the percentage of the cleanup that has been completed.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Wim.WimMessageProcess">
+            <summary>
+                Represents a message that enables the caller to prevent a file or a directory from being captured or applied.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Wim.WimMessageProcess.#ctor(System.IntPtr,System.IntPtr)">
+            <summary>
+                Initializes a new instance of the WimMessageProcess class.
+            </summary>
+            <param name="wParam">The wParam object from the native callback function.</param>
+            <param name="lParam">The lParam object from the native callback function.</param>
+        </member>
+        <member name="P:Microsoft.Wim.WimMessageProcess.Path">
+            <summary>
+                Gets the full file path of the file or the directory to be captured or applied.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Wim.WimMessageProcess.Process">
+            <summary>
+                Gets or sets a boolean indicating whether the file or the directory must be captured or applied.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Wim.WimMessageProgress">
+            <summary>
+                Represents a message that indicates an update in the progress of an image application.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Wim.WimMessageProgress.#ctor(System.IntPtr,System.IntPtr)">
+            <summary>
+                Initializes a new instance of the WimMessageProgress class.
+            </summary>
+            <param name="wParam">The wParam object from the native callback function.</param>
+            <param name="lParam">The lParam object from the native callback function.</param>
+        </member>
+        <member name="P:Microsoft.Wim.WimMessageProgress.EstimatedTimeRemaining">
+            <summary>
+                Gets a <see cref="T:System.TimeSpan" /> object that contains an estimated amount of time until the image application is
+                complete.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Wim.WimMessageProgress.PercentComplete">
+            <summary>
+                Gets the percentage of the image that was already applied.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Wim.WimMessageRetry">
+            <summary>
+                Represents a message when an I/O error occurs during a <see cref="M:Microsoft.Wim.WimgApi.ApplyImage(Microsoft.Wim.WimHandle,System.String,Microsoft.Wim.WimApplyImageOptions)" /> operation.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Wim.WimMessageRetry.#ctor(System.IntPtr,System.IntPtr)">
+            <summary>
+                Initializes a new instance of the WimMessageRetry class.
+            </summary>
+            <param name="wParam">The wParam object from the native callback function.</param>
+            <param name="lParam">The lParam object from the native callback function.</param>
+        </member>
+        <member name="P:Microsoft.Wim.WimMessageRetry.Path">
+            <summary>
+                Gets the full file path to the file that had the failure during the apply operation.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Wim.WimMessageRetry.Win32ErrorCode">
+            <summary>
+                Gets the Win32® error code indicating the cause of the error.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Wim.WimMessageScanning">
+            <summary>
+                Represents a message that indicates volume information is gathered during an image capture.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Wim.WimMessageScanning.#ctor(System.IntPtr,System.IntPtr)">
+            <summary>
+                Initializes a new instance of the WimMessageScanning class.
+            </summary>
+            <param name="wParam">The wParam object from the native callback function.</param>
+            <param name="lParam">The lParam object from the native callback function.</param>
+        </member>
+        <member name="P:Microsoft.Wim.WimMessageScanning.DirectoryCount">
+            <summary>
+                Gets the number of directories that were scanned.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Wim.WimMessageScanning.FileCount">
+            <summary>
+                Gets the number of files that were scanned.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Wim.WimMessageSetPosition">
+            <summary>
+                Represents a message that indicates the number of files that were captured or applied.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Wim.WimMessageSetPosition.#ctor(System.IntPtr,System.IntPtr)">
+            <summary>
+                Initializes a new instance of the WimMessageScanning class.
+            </summary>
+            <param name="wParam">The wParam object from the native callback function.</param>
+            <param name="lParam">The lParam object from the native callback function.</param>
+        </member>
+        <member name="P:Microsoft.Wim.WimMessageSetPosition.FileCount">
+            <summary>
+                Gets the number of files that were captured or applied.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Wim.WimMessageSetRange">
+            <summary>
+                Represents a message that indicates the number of files to capture or to apply.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Wim.WimMessageSetRange.#ctor(System.IntPtr,System.IntPtr)">
+            <summary>
+                Initializes a new instance of the WimMessageScanning class.
+            </summary>
+            <param name="wParam">The wParam object from the native callback function.</param>
+            <param name="lParam">The lParam object from the native callback function.</param>
+        </member>
+        <member name="P:Microsoft.Wim.WimMessageSetRange.FileCount">
+            <summary>
+                Gets the number of files to capture or to apply.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Wim.WimMessageSplit">
+            <summary>
+                Represents a message that enables the caller to change the size or the name of a piece of a split Windows® image
+                (.wim) file.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Wim.WimMessageSplit.#ctor(System.IntPtr,System.IntPtr)">
+            <summary>
+                Initializes a new instance of the WimMessageSplit class.
+            </summary>
+            <param name="wParam">The wParam object from the native callback function.</param>
+            <param name="lParam">The lParam object from the native callback function.</param>
+        </member>
+        <member name="P:Microsoft.Wim.WimMessageSplit.PartPath">
+            <summary>
+                Gets or sets the full file path of the .wim part that is about to be created.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Wim.WimMessageSplit.PartSize">
+            <summary>
+                Gets or sets a value that specifies the maximum size for the .wim part about to be created.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Wim.WimMessageStaleMountDirectory">
+            <summary>
+                Represents a message that indicates to the caller that a stale mount directory is being removed.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Wim.WimMessageStaleMountDirectory.#ctor(System.IntPtr,System.IntPtr)">
+            <summary>
+                Initializes a new instance of the WimMessageStaleMountDirectory class.
+            </summary>
+            <param name="wParam">The wParam object from the native callback function.</param>
+            <param name="lParam">The lParam object from the native callback function.</param>
+        </member>
+        <member name="P:Microsoft.Wim.WimMessageStaleMountDirectory.Path">
+            <summary>
+                Gets the full file path of the stale mount directory.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Wim.WimMessageStaleMountFile">
+            <summary>
+                Represents a message that indicates to the caller how many stale files were removed.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Wim.WimMessageStaleMountFile.#ctor(System.IntPtr,System.IntPtr)">
+            <summary>
+                Initializes a new instance of the WimMessageStaleMountFile class.
+            </summary>
+            <param name="wParam">The wParam object from the native callback function.</param>
+            <param name="lParam">The lParam object from the native callback function.</param>
+        </member>
+        <member name="P:Microsoft.Wim.WimMessageStaleMountFile.DriveLetter">
+            <summary>
+                Gets a value indicating which drive letter was scanned.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Wim.WimMessageStaleMountFile.FilesDeleted">
+            <summary>
+                Gets a value indicating how many stale files were deleted.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Wim.WimMessageText">
+            <summary>
+                Represents a message in debug builds with text messages containing status and error information.
+            </summary>
+            <remarks>This message is only sent when using the debug version of wimgapi.dll.</remarks>
+        </member>
+        <member name="M:Microsoft.Wim.WimMessageText.#ctor(System.IntPtr,System.IntPtr)">
+            <summary>
+                Initializes a new instance of the WimMessageText class.
+            </summary>
+            <param name="wParam">The wParam object from the native callback function.</param>
+            <param name="lParam">The lParam object from the native callback function.</param>
+        </member>
+        <member name="P:Microsoft.Wim.WimMessageText.Text">
+            <summary>
+                Gets the message text.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Wim.WimMessageWarning">
+            <summary>
+                Represents a message to warn the caller that a non-critical error occurred while capturing or applying an image.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Wim.WimMessageWarning.#ctor(System.IntPtr,System.IntPtr)">
+            <summary>
+                Initializes a new instance of the WimMessageWarning class.
+            </summary>
+            <param name="wParam">The wParam object from the native callback function.</param>
+            <param name="lParam">The lParam object from the native callback function.</param>
+        </member>
+        <member name="P:Microsoft.Wim.WimMessageWarning.Path">
+            <summary>
+                Gets the full file path of the file with the failure during the image capture or apply operation.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Wim.WimMessageWarning.Win32ErrorCode">
+            <summary>
+                Gets the Win32® error code indicating the cause of the error.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Wim.WimMessageWarningObjectId">
+            <summary>
+                Represents a message to warn the caller that the Object ID for a particular file could not be restored.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Wim.WimMessageWarningObjectId.#ctor(System.IntPtr,System.IntPtr)">
+            <summary>
+                Initializes a new instance of the WimMessageWarningObjectId class.
+            </summary>
+            <param name="wParam">The wParam object from the native callback function.</param>
+            <param name="lParam">The lParam object from the native callback function.</param>
+        </member>
+        <member name="P:Microsoft.Wim.WimMessageWarningObjectId.Path">
+            <summary>
+                Gets the full file path of the file with the failure during the image capture or apply operation.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Wim.WimMessageWarningObjectId.Win32ErrorCode">
+            <summary>
+                Gets the Win32® error code indicating the cause of the error.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Wim.WimMessageCallback">
+            <summary>
+                An application defined method to be called when messages are set from the Windows® imaging API.
+            </summary>
+            <param name="messageType">The <see cref="T:Microsoft.Wim.WimMessageType" /> of the message.</param>
+            <param name="message">
+                An object containing information about the message.  The object's type depends on the messageType
+                parameter.
+            </param>
+            <param name="userData">A user-defined object passed when the callback was registered.</param>
+            <returns>
+                To indicate success and to enable other subscribers to process the message return
+                <see cref="F:Microsoft.Wim.WimMessageResult.Success" />. To prevent other subscribers from receiving the message, return
+                <see cref="F:Microsoft.Wim.WimMessageResult.Done" />. To cancel an image apply or image capture, return
+                <see cref="F:Microsoft.Wim.WimMessageResult.Abort" /> when handling the <see cref="T:Microsoft.Wim.WimMessageProcess" /> message.
+            </returns>
+        </member>
+        <member name="T:Microsoft.Wim.WimMessageCallbackWrapper">
+            <summary>
+                Represents a wrapper class for the native callback functionality.  This class exposes a native callback and then
+                calls the managed callback with marshaled values.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimMessageCallbackWrapper._callback">
+            <summary>
+                The user's callback method.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimMessageCallbackWrapper._userData">
+            <summary>
+                The user's custom data to pass around
+            </summary>
+        </member>
+        <member name="M:Microsoft.Wim.WimMessageCallbackWrapper.#ctor(Microsoft.Wim.WimMessageCallback,System.Object)">
+            <summary>
+                Initializes a new instance of the WimMessageCallbackWrapper class
+            </summary>
+            <param name="callback">
+                A <see cref="M:Microsoft.Wim.WimMessageCallbackWrapper.WimMessageCallback(Microsoft.Wim.WimMessageType,System.IntPtr,System.IntPtr,System.IntPtr)" /> delegate to call when a message is received from the
+                Windows® Imaging API.
+            </param>
+            <param name="userData">An object containing data to be used by the method.</param>
+        </member>
+        <member name="P:Microsoft.Wim.WimMessageCallbackWrapper.NativeCallback">
+            <summary>
+                Gets the native callback delegate to be executed.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Wim.WimMessageCallbackWrapper.WimMessageCallback(Microsoft.Wim.WimMessageType,System.IntPtr,System.IntPtr,System.IntPtr)">
+            <summary>
+            </summary>
+            <param name="MessageId">Specifies the sent message.</param>
+            <param name="wParam">
+                Specifies additional message information. The contents of this parameter depend on the value of
+                the MessageId parameter.
+            </param>
+            <param name="lParam">
+                Specifies additional message information. The contents of this parameter depend on the value of
+                the MessageId parameter.
+            </param>
+            <param name="UserData">
+                A handle that specifies the user-defined value passed to the WIMRegisterMessageCallback
+                function.  This is currently not used.
+            </param>
+            <returns></returns>
+        </member>
+        <member name="T:Microsoft.Wim.WimMountInfo">
+            <summary>
+                Represents information about a mounted .wim file.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimMountInfo.MountInfoLevel">
+            <summary>
+                Represents the current WimMountedImageInfoLevels in use for marshaling.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimMountInfo._wimMountInfo">
+            <summary>
+                The native <see cref="T:Microsoft.Wim.WimgApi.WIM_MOUNT_INFO_LEVEL1" /> struct that contains information about the mounted .wim
+                file.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Wim.WimMountInfo.#ctor(System.IntPtr)">
+            <summary>
+                Initializes a new instance of the WimMountInfo class.
+            </summary>
+            <param name="wimMountInfoPtr">A pointer to a native <see cref="T:Microsoft.Wim.WimgApi.WIM_MOUNT_INFO_LEVEL1" /> struct.</param>
+        </member>
+        <member name="M:Microsoft.Wim.WimMountInfo.#ctor(Microsoft.Wim.WimgApi.WIM_MOUNT_INFO_LEVEL1)">
+            <summary>
+                Initializes a new instance of the WimMountInfo class.
+            </summary>
+            <param name="wimMountInfo">
+                A <see cref="T:Microsoft.Wim.WimgApi.WIM_MOUNT_INFO_LEVEL1" /> that contains information about the mounted
+                .wim file.
+            </param>
+        </member>
+        <member name="P:Microsoft.Wim.WimMountInfo.ImageIndex">
+            <summary>
+                Gets the image index within the .wim file specified in <see cref="P:Microsoft.Wim.WimMountInfo.Path" />.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Wim.WimMountInfo.MountPath">
+            <summary>
+                Gets the full path to the directory where the image is mounted.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Wim.WimMountInfo.Path">
+            <summary>
+                Gets the full path to the .wim file.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Wim.WimMountInfo.ReadOnly">
+            <summary>
+                Gets a boolean value indicating if the image was mounted with support for saving changes.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Wim.WimMountInfo.State">
+            <summary>
+                Gets the current state of the mount point.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Wim.WimMountInfo.GetMountInfo(System.String)">
+            <summary>
+                Gets information about a mounted image.
+            </summary>
+            <param name="mountPath">The full file path of the directory to which the .wim file has been mounted.</param>
+            <returns>A <see cref="T:Microsoft.Wim.WimMountInfo" /> object containing information about the mounted image.</returns>
+        </member>
+        <member name="T:Microsoft.Wim.WimMountInfoCollection">
+            <summary>
+                Represents a collection of <see cref="T:Microsoft.Wim.WimMountInfo" /> objects.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Wim.WimMountInfoCollection.#ctor(System.Collections.Generic.IList{Microsoft.Wim.WimMountInfo})">
+            <summary>
+                Initializes a new instance of the WimMountInfoCollection class.
+            </summary>
+            <param name="list">A list of <see cref="T:Microsoft.Wim.WimMountInfo" /> objects to wrap as a collection.</param>
+        </member>
+        <member name="T:Microsoft.Wim.WimRegisteredCallbacks">
+            <summary>
+                Represents a collection of registered callbacks.  Callbacks can be registered globally or per
+                <see cref="T:Microsoft.Wim.WimHandle" />.
+            </summary>
+            <remarks>
+                This class is not thread safe.  Locks should be used when adding, removing, or checking the existence of
+                items.
+            </remarks>
+        </member>
+        <member name="F:Microsoft.Wim.WimRegisteredCallbacks._registeredCallbacksByHandle">
+            <summary>
+                Stores a list of registered callbacks by their WimHandle.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Wim.WimRegisteredCallbacks._registeredCallbacksGlobal">
+            <summary>
+                Stores a list of globally registered callbacks.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Wim.WimRegisteredCallbacks.GetNativeCallback(Microsoft.Wim.WimHandle,Microsoft.Wim.WimMessageCallback)">
+            <summary>
+                Gets a native callback for passing to the WIMGAPI for the specified registered callback associated with the
+                <see cref="T:Microsoft.Wim.WimHandle" />.
+            </summary>
+            <param name="wimHandle">A <see cref="T:Microsoft.Wim.WimHandle" /> of a windows image file.</param>
+            <param name="messageCallback">The <see cref="T:Microsoft.Wim.WimMessageCallback" /> method that was registered.</param>
+            <returns>A <see cref="T:Microsoft.Wim.WimgApi.WIMMessageCallback" /> method that can be passed to the native WIMGAPI.</returns>
+            <exception cref="T:System.InvalidOperationException">
+                The specified handle has no registered callbacks or the specified callback
+                is not registered for the handle.
+            </exception>
+        </member>
+        <member name="M:Microsoft.Wim.WimRegisteredCallbacks.GetNativeCallback(Microsoft.Wim.WimMessageCallback)">
+            <summary>
+                Gets a native callback for passing to the WIMGAPI for the specified globally registered callback.
+            </summary>
+            <param name="messageCallback">The <see cref="T:Microsoft.Wim.WimMessageCallback" /> method that was registered.</param>
+            <returns>A <see cref="T:Microsoft.Wim.WimgApi.WIMMessageCallback" /> method that can be passed to the native WIMGAPI.</returns>
+            ///
+            <exception cref="T:System.InvalidOperationException">The specified callback is not registered.</exception>
+        </member>
+        <member name="M:Microsoft.Wim.WimRegisteredCallbacks.IsCallbackRegistered(Microsoft.Wim.WimHandle,Microsoft.Wim.WimMessageCallback)">
+            <summary>
+                Gets a value indicating if the specified callback is registered for the handle.
+            </summary>
+            <param name="wimHandle">A <see cref="T:Microsoft.Wim.WimHandle" /> of a windows image file.</param>
+            <param name="messageCallback">The <see cref="T:Microsoft.Wim.WimMessageCallback" /> method that was registered.</param>
+            <returns><c>true</c> if the callback is registered, otherwise <c>false</c>.</returns>
+        </member>
+        <member name="M:Microsoft.Wim.WimRegisteredCallbacks.IsCallbackRegistered(Microsoft.Wim.WimMessageCallback)">
+            <summary>
+                Gets a value indicating if the specified callback is globally registered.
+            </summary>
+            <param name="messageCallback">The <see cref="T:Microsoft.Wim.WimMessageCallback" /> method that was registered.</param>
+            <returns><c>true</c> if the callback is registered, otherwise <c>false</c>.</returns>
+        </member>
+        <member name="M:Microsoft.Wim.WimRegisteredCallbacks.RegisterCallback(Microsoft.Wim.WimHandle,Microsoft.Wim.WimMessageCallback,System.Object)">
+            <summary>
+                Registers a callback for the specified <see cref="T:Microsoft.Wim.WimHandle" />.
+            </summary>
+            <param name="wimHandle">A <see cref="T:Microsoft.Wim.WimHandle" /> of a windows image file.</param>
+            <param name="messageCallback">The <see cref="T:Microsoft.Wim.WimMessageCallback" /> method to register.</param>
+            <param name="userData">User-defined data to pass to the callback.</param>
+            <returns><c>true</c> if the callback was successfully registered, otherwise <c>false</c>.</returns>
+            <exception cref="T:System.ArgumentNullException">wimHandle or messageCallback is null.</exception>
+        </member>
+        <member name="M:Microsoft.Wim.WimRegisteredCallbacks.RegisterCallback(Microsoft.Wim.WimMessageCallback,System.Object)">
+            <summary>
+                Registers a callback globally.
+            </summary>
+            <param name="messageCallback">The <see cref="T:Microsoft.Wim.WimMessageCallback" /> method to register.</param>
+            <param name="userData">User-defined data to pass to the callback.</param>
+            <returns><c>true</c> if the callback was successfully registered, otherwise <c>false</c>.</returns>
+            <exception cref="T:System.ArgumentNullException">messageCallback is null.</exception>
+        </member>
+        <member name="M:Microsoft.Wim.WimRegisteredCallbacks.UnregisterCallback(Microsoft.Wim.WimHandle,Microsoft.Wim.WimMessageCallback)">
+            <summary>
+                Un-registers the specified callback for the <see cref="T:Microsoft.Wim.WimHandle" />.
+            </summary>
+            <param name="wimHandle">A <see cref="T:Microsoft.Wim.WimHandle" /> of a windows image file.</param>
+            <param name="messageCallback">The <see cref="T:Microsoft.Wim.WimMessageCallback" /> method to un-register.</param>
+            <returns><c>true</c> if the callback was successfully un-registered, otherwise <c>false</c>.</returns>
+            <exception cref="T:System.ArgumentNullException">wimHandle or messageCallback is null.</exception>
+        </member>
+        <member name="M:Microsoft.Wim.WimRegisteredCallbacks.UnregisterCallback(Microsoft.Wim.WimMessageCallback)">
+            <summary>
+                Un-registers the specified callback.
+            </summary>
+            <param name="messageCallback">The <see cref="T:Microsoft.Wim.WimMessageCallback" /> method to un-register.</param>
+            <returns><c>true</c> if the callback was successfully un-registered, otherwise <c>false</c>.</returns>
+            <exception cref="T:System.ArgumentNullException">messageCallback is null.</exception>
+        </member>
+        <member name="M:Microsoft.Wim.WimRegisteredCallbacks.UnregisterCallbacks(Microsoft.Wim.WimHandle)">
+            <summary>
+                Un-registers all callbacks for the specified <see cref="T:Microsoft.Wim.WimHandle" />.
+            </summary>
+            <param name="wimHandle">A <see cref="T:Microsoft.Wim.WimHandle" /> of a windows image file.</param>
+            <returns><c>true</c> if the all of the callbacks were successfully un-registered, otherwise <c>false</c>.</returns>
+            <exception cref="T:System.ArgumentNullException">wimHandle is null.</exception>
+        </member>
+        <member name="M:Microsoft.Wim.WimRegisteredCallbacks.UnregisterCallbacks">
+            <summary>
+                Un-registers all globally registered callbacks and callbacks associated with <see cref="T:Microsoft.Wim.WimHandle" /> objects.
+            </summary>
+            <returns><c>true</c> if the all of the callbacks were successfully un-registered, otherwise <c>false</c>.</returns>
+        </member>
+    </members>
+</doc>

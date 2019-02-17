@@ -1,0 +1,17 @@
+D:\Win Toolkit_v2\WTK2\DLL\Imaging\Microsoft.Wim\bin\Debug\Microsoft.Wim.dll
+D:\Win Toolkit_v2\WTK2\DLL\Imaging\Microsoft.Wim\bin\Debug\Microsoft.Wim.pdb
+D:\Win Toolkit_v2\WTK2\DLL\Imaging\Microsoft.Wim\bin\Debug\Microsoft.Win32Ex.dll
+D:\Win Toolkit_v2\WTK2\DLL\Imaging\Microsoft.Wim\bin\Debug\Microsoft.Win32Ex.pdb
+D:\Win Toolkit_v2\WTK2\DLL\Imaging\Microsoft.Wim\bin\Debug\Microsoft.Win32Ex.xml
+D:\Win Toolkit_v2\WTK2\DLL\Imaging\Microsoft.Wim\obj\Debug\Microsoft.Wim.csprojResolveAssemblyReference.cache
+D:\Win Toolkit_v2\WTK2\DLL\Imaging\Microsoft.Wim\obj\Debug\Microsoft.Wim.dll
+D:\Win Toolkit_v2\WTK2\DLL\Imaging\Microsoft.Wim\obj\Debug\Microsoft.Wim.pdb
+E:\Win Toolkit_v2\WTK2\DLL\Imaging\Microsoft.Wim\bin\Debug\Microsoft.Wim.dll
+E:\Win Toolkit_v2\WTK2\DLL\Imaging\Microsoft.Wim\bin\Debug\Microsoft.Wim.pdb
+E:\Win Toolkit_v2\WTK2\DLL\Imaging\Microsoft.Wim\bin\Debug\Microsoft.Win32Ex.dll
+E:\Win Toolkit_v2\WTK2\DLL\Imaging\Microsoft.Wim\bin\Debug\Microsoft.Win32Ex.pdb
+E:\Win Toolkit_v2\WTK2\DLL\Imaging\Microsoft.Wim\bin\Debug\Microsoft.Win32Ex.xml
+E:\Win Toolkit_v2\WTK2\DLL\Imaging\Microsoft.Wim\obj\Debug\Microsoft.Wim.csprojResolveAssemblyReference.cache
+E:\Win Toolkit_v2\WTK2\DLL\Imaging\Microsoft.Wim\obj\Debug\Microsoft.Wim.dll
+E:\Win Toolkit_v2\WTK2\DLL\Imaging\Microsoft.Wim\obj\Debug\Microsoft.Wim.pdb
+E:\Win Toolkit_v2\WTK2\DLL\Imaging\Microsoft.Wim\obj\Debug\Microsoft.Wim.csproj.CoreCompileInputs.cache

@@ -1,0 +1,319 @@
+﻿<Window x:Class="WinToolkitv2.Dialogs.FrmError"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="{DynamicResource FrmError-00000000}"
+        Width="685"
+        SizeToContent="Height"
+        MinWidth="560"
+        ResizeMode="CanMinimize"
+        Icon="../Images/Error/Error_32.png"
+        WindowStartupLocation="CenterScreen"
+        Height="320">
+<Window.Resources>
+    <ResourceDictionary>
+        <Image x:Key="imgDelete" Source="../Images/_Global/Delete_16.png" MaxHeight="16" MaxWidth="16" Stretch="None" x:Shared="False"/>
+    </ResourceDictionary>
+    
+</Window.Resources>
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <ToolBarPanel DockPanel.Dock="Top"
+                      Grid.Row="0">
+            <ToolBar ToolBarTray.IsLocked="True"
+                     OverflowMode="Never">
+
+                <Button Click="BtnClipboard_OnClick">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="../Images/_Global/Clipboard_32.png"
+                               VerticalAlignment="Center"
+                               MaxHeight="32"
+                               RenderOptions.BitmapScalingMode="NearestNeighbor"
+                               RenderOptions.EdgeMode="Aliased"
+                               Margin="0,0,5,0" />
+                        <TextBlock Text="{DynamicResource FrmError-00000009}"
+                                   VerticalAlignment="Center" />
+                    </StackPanel>
+                </Button>
+                <Separator />
+                <Menu Background="Transparent"
+                      VerticalContentAlignment="Center"
+                      VerticalAlignment="Center">
+                    <MenuItem Background="Transparent">
+                        <MenuItem.Header>
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="../Images/Options/Save_32.png"
+                                       MaxHeight="32"
+                                       RenderOptions.BitmapScalingMode="NearestNeighbor"
+                                       RenderOptions.EdgeMode="Aliased"
+                                       Margin="0,0,5,0" />
+                                <ContentPresenter Content="{DynamicResource FrmError-00000010}"
+                                                  VerticalAlignment="Center" />
+                            </StackPanel>
+                        </MenuItem.Header>
+                        <MenuItem Background="Transparent"
+                                  
+                                  Header="{DynamicResource FrmError-00000014}"
+                                  Click="BtnSaveXMLAs_OnClick">
+                            <MenuItem.Icon>
+                                <Image Source="../Images/Error/XML_32.png"
+                                       MaxHeight="32"
+                                       RenderOptions.BitmapScalingMode="NearestNeighbor"
+                                       RenderOptions.EdgeMode="Aliased" />
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem x:Name="BtnSaveScreenshotAs"
+                                  Background="Transparent"
+                                  Header="{DynamicResource FrmError-00000013}"
+                                  Click="BtnSaveScreenshotAs_OnClick">
+                            <MenuItem.Icon>
+                                <Image Source="../Images/_Global/PNG_32.png"
+                                       MaxHeight="32"
+                                       RenderOptions.BitmapScalingMode="NearestNeighbor"
+                                       RenderOptions.EdgeMode="Aliased" />
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem x:Name="BtnSaveAsBundle"
+                                  Background="Transparent"
+                                  Header="{DynamicResource FrmError-00000015}"
+                                  Click="BtnSaveAsBundle_OnClick">
+                            <MenuItem.Icon>
+                                <Image Source="../Images/Error/Bundle_32.png"
+                                       MaxHeight="32"
+                                       RenderOptions.BitmapScalingMode="NearestNeighbor"
+                                       RenderOptions.EdgeMode="Aliased" />
+                            </MenuItem.Icon>
+                        </MenuItem>
+                    </MenuItem>
+
+
+                </Menu>
+
+                <Button x:Name="BtnAttachment" Click="BtnAttachment_OnClick"
+                      >
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="../Images/Error/Attachment_32.png"
+                               MaxHeight="32"
+                               RenderOptions.BitmapScalingMode="NearestNeighbor"
+                               RenderOptions.EdgeMode="Aliased"
+                               Margin="0,0,5,0" />
+                        <TextBlock Text="{DynamicResource FrmError-00000019}"
+                                   VerticalAlignment="Center" />
+                    </StackPanel>
+                </Button>
+
+                <Button x:Name="BtnUpload"
+                        IsEnabled="False">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="../Images/Error/Upload_32.png"
+                               MaxHeight="32"
+                               RenderOptions.BitmapScalingMode="NearestNeighbor"
+                               RenderOptions.EdgeMode="Aliased"
+                               Margin="0,0,5,0"/>
+                        <TextBlock Text="{DynamicResource FrmError-00000017}"
+                                   VerticalAlignment="Center" />
+                    </StackPanel>
+                </Button>
+              
+<Separator />
+                <Button x:Name="BtnForum"
+                        HorizontalAlignment="Stretch"
+                        Background="Transparent"
+                        VerticalAlignment="Stretch"
+                        Click="BtnForum_OnClick">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="../Images/MainMenu/Forum_32.png"
+                               MaxHeight="32"
+                               RenderOptions.BitmapScalingMode="NearestNeighbor"
+                               RenderOptions.EdgeMode="Aliased"
+                               Margin="0,0,5,0" />
+                        <TextBlock Text="{DynamicResource FrmError-00000012}"
+                                   VerticalAlignment="Center" />
+                    </StackPanel>
+                </Button>
+            </ToolBar>
+        </ToolBarPanel>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Image Grid.Row="0"
+                   Grid.Column="0"
+                   Source="../Images/Error/Error_32.png"
+                   HorizontalAlignment="Right"
+                   VerticalAlignment="Center"
+                   MaxHeight="32"
+                   RenderOptions.BitmapScalingMode="NearestNeighbor"
+                   RenderOptions.EdgeMode="Aliased" />
+            <Label x:Name="lblTitle"
+                   Grid.Row="0"
+                   Grid.Column="1"
+                   Grid.ColumnSpan="4"
+                   Content="Test Error"
+                   VerticalAlignment="Center"
+                   FontSize="20"
+                   FontWeight="SemiBold" />
+
+
+
+
+
+            <Label Grid.Row="1"
+                   Grid.Column="0"
+                   Content="{DynamicResource FrmError-00000001}"
+                   FontWeight="SemiBold"
+                   HorizontalContentAlignment="Right" />
+            <Label x:Name="lblMessage"
+                   Grid.Row="1"
+                   Grid.Column="1"
+                   Grid.ColumnSpan="4"
+                   Content="N/A" />
+
+            <Label Grid.Row="2"
+                   Grid.Column="0"
+                   Content="{DynamicResource FrmError-00000002 }"
+                   HorizontalContentAlignment="Right"
+                   FontWeight="SemiBold" />
+            <Label x:Name="lblPriority"
+                   Grid.Row="2"
+                   Grid.Column="1"
+                   Content="N/A" />
+
+            <Label Grid.Row="3"
+                   Grid.Column="0"
+                   Content="{DynamicResource Global-00000028}"
+                   HorizontalContentAlignment="Right"
+                   FontWeight="SemiBold" />
+            <Label x:Name="lblDate"
+                   Grid.Row="3"
+                   Grid.Column="1"
+                   Content="N/A" />
+            <Label Grid.Row="3"
+                   Grid.Column="2"
+                   Content="{DynamicResource FrmError-00000003}"
+                   HorizontalContentAlignment="Right"
+                   FontWeight="SemiBold" />
+            <Label x:Name="lblMachine"
+                   Grid.Row="3"
+                   Grid.Column="3"
+                   Content="N/A" />
+
+            <Label Grid.Row="4"
+                   Grid.Column="0"
+                   Content="{DynamicResource FrmError-00000004}"
+                   HorizontalContentAlignment="Right"
+                   FontWeight="SemiBold" />
+            <Label x:Name="lblEXEversion"
+                   Grid.Row="4"
+                   Grid.Column="1"
+                   Content="N/A" />
+            <Label Grid.Row="4"
+                   Grid.Column="2"
+                   Content="{DynamicResource FrmError-00000005}"
+                   HorizontalContentAlignment="Right"
+                   FontWeight="SemiBold" />
+            <Label x:Name="lblDLLversion"
+                   Grid.Row="4"
+                   Grid.Column="3"
+                   Content="N/A" />
+
+            <Label Grid.Row="5"
+                   Grid.Column="0"
+                   Content="{DynamicResource FrmError-00000006}"
+                   HorizontalContentAlignment="Right"
+                   FontWeight="SemiBold" />
+            <Label x:Name="lblAssembly"
+                   Grid.Row="5"
+                   Grid.Column="1"
+                   Content="N/A" />
+
+            <Label Grid.Row="5"
+                   Grid.Column="2"
+                   Content="{DynamicResource FrmError-00000007}"
+                   HorizontalContentAlignment="Right"
+                   FontWeight="SemiBold" />
+            <Label x:Name="lblSource"
+                   Content="N/A"
+                   Grid.Row="5"
+                   Grid.Column="3" />
+
+
+        </Grid>
+
+        <Expander Grid.Row="2"
+                  x:Name="eAttachments"
+                  Header="{DynamicResource FrmError-00000018}"
+                  HorizontalAlignment="Stretch"
+                  HorizontalContentAlignment="Stretch"
+                  VerticalAlignment="Stretch"
+                  VerticalContentAlignment="Stretch"
+                  Margin="5,0,5,0"
+                  MaxHeight="150"
+                  Expanded="OnExpanded">
+            <ScrollViewer>
+               <StackPanel x:Name="scAttachments">
+                   
+               </StackPanel>
+            </ScrollViewer>
+        </Expander>
+
+
+        <Expander Grid.Row="3"
+                  x:Name="eNotes"
+                  Header="{DynamicResource FrmError-00000016}"
+                  HorizontalAlignment="Stretch"
+                  HorizontalContentAlignment="Stretch"
+                  VerticalAlignment="Stretch"
+                  VerticalContentAlignment="Stretch"
+                  Margin="5,0,5,0"
+                  MaxHeight="150"
+                  Expanded="OnExpanded">
+            <ScrollViewer>
+                <TextBox x:Name="txtNotes"
+                         TextWrapping="Wrap"
+                         AcceptsReturn="True"
+                         TextChanged="TxtNotes_OnTextChanged" />
+            </ScrollViewer>
+        </Expander>
+    
+        <Expander Grid.Row="4"
+                  x:Name="eExtended"
+                  Header="{DynamicResource FrmError-00000008}"
+                  HorizontalAlignment="Stretch"
+                  HorizontalContentAlignment="Stretch"
+                  VerticalAlignment="Stretch"
+                  VerticalContentAlignment="Stretch"
+                  Margin="5,0,5,5"
+                  MaxHeight="250"
+                  Expanded="OnExpanded">
+            <ScrollViewer>
+                <StackPanel x:Name="spMoreInfo"
+                            Orientation="Vertical"
+                            ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                            ScrollViewer.VerticalScrollBarVisibility="Auto">
+
+                    <TextBlock x:Name="lblExtended"
+                               Text="N/A" />
+                </StackPanel>
+            </ScrollViewer>
+
+        </Expander>
+    </Grid>
+</Window>

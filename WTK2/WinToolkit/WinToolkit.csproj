@@ -1,0 +1,798 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3F3F3132-FDA5-485A-864D-285BA45A497E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WinToolkitv2</RootNamespace>
+    <AssemblyName>WinToolkitv2</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <NoWarn>1607</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>WTK.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>WinToolkitv2.App</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>DE5A95ECA4C1B3AB7487EC9B7C9EB2FF1CF262E9</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>WinToolkit_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="system.windows.controls.ribbon" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Dialogs\frmError.xaml.cs">
+      <DependentUpon>frmError.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\frmWIMEdit.xaml.cs">
+      <DependentUpon>frmWIMEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="frmDriverInstaller.xaml.cs">
+      <DependentUpon>frmDriverInstaller.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="frmUpdateInstaller.xaml.cs">
+      <DependentUpon>frmUpdateInstaller.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="frmOptions.xaml.cs">
+      <DependentUpon>frmOptions.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="frmWIMManager.xaml.cs">
+      <DependentUpon>frmWIMManager.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="frmUSBPrep.xaml.cs">
+      <DependentUpon>frmUSBPrep.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_Code\Exceptions.cs" />
+    <Compile Include="_Code\License.cs" />
+    <Compile Include="_Code\Localization.cs" />
+    <Compile Include="frmAllInOne.xaml.cs">
+      <DependentUpon>frmAllInOne.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_Code\Unhandled.cs" />
+    <Compile Include="_frmTemplate.xaml.cs">
+      <DependentUpon>_frmTemplate.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Dialogs\frmError.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Dialogs\frmWIMEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="frmDriverInstaller.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="frmUpdateInstaller.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="frmOptions.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="frmWIMManager.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lang\en-US.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="frmISOMaker.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="frmMain.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="frmConverter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="frmStartup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="frmISOMaker.xaml.cs">
+      <DependentUpon>frmISOMaker.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.xaml.cs">
+      <DependentUpon>frmMain.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="frmConverter.xaml.cs">
+      <DependentUpon>frmConverter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="frmStartup.xaml.cs">
+      <DependentUpon>frmStartup.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="frmUSBPrep.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="frmAllInOne.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="_frmTemplate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="app.manifest">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MainMenu\Donate_16.png">
+      <Localizable>False</Localizable>
+    </Resource>
+    <Resource Include="Images\MainMenu\Help_16.png">
+      <Localizable>False</Localizable>
+    </Resource>
+    <Resource Include="Images\MainMenu\Log_32.png">
+      <Localizable>False</Localizable>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\_Global\OK_25.png">
+      <Localizable>False</Localizable>
+    </Resource>
+    <Resource Include="Images\_Global\Warning_25.png">
+      <Localizable>False</Localizable>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MainMenu\Blog_16.png">
+      <Localizable>False</Localizable>
+    </Resource>
+    <Resource Include="Images\MainMenu\Bug_32.png">
+      <Localizable>False</Localizable>
+    </Resource>
+    <Resource Include="Images\MainMenu\Capture_32.png">
+      <Localizable>False</Localizable>
+    </Resource>
+    <Resource Include="Images\MainMenu\Donate_32.png">
+      <Localizable>False</Localizable>
+    </Resource>
+    <Resource Include="Images\MainMenu\Facebook_16.png">
+      <Localizable>False</Localizable>
+    </Resource>
+    <Resource Include="Images\MainMenu\Forum_32.png">
+      <Localizable>False</Localizable>
+    </Resource>
+    <Resource Include="Images\MainMenu\Guides_32.png">
+      <Localizable>False</Localizable>
+    </Resource>
+    <Resource Include="Images\MainMenu\ISO_32.png">
+      <Localizable>False</Localizable>
+    </Resource>
+    <Resource Include="Images\MainMenu\LangPack_32.png">
+      <Localizable>False</Localizable>
+    </Resource>
+    <Resource Include="Images\MainMenu\MSUtoCAB_32.png">
+      <Localizable>False</Localizable>
+    </Resource>
+    <Resource Include="Images\MainMenu\Office2013_16.png">
+      <Localizable>False</Localizable>
+    </Resource>
+    <Resource Include="Images\MainMenu\WallpaperRoot_32.png">
+      <Localizable>False</Localizable>
+    </Resource>
+    <Resource Include="Images\MainMenu\Wallpapers_16.png">
+      <Localizable>False</Localizable>
+    </Resource>
+    <Resource Include="Images\MainMenu\WTUpdate_32.png">
+      <Localizable>False</Localizable>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MainMenu\AddonMaker_32.png">
+      <Localizable>False</Localizable>
+    </Resource>
+    <Resource Include="Images\MainMenu\Addons_32.png">
+      <Localizable>False</Localizable>
+    </Resource>
+    <Resource Include="Images\MainMenu\Browsers_32.png">
+      <Localizable>False</Localizable>
+    </Resource>
+    <Resource Include="Images\MainMenu\Chrome_16.png">
+      <Localizable>False</Localizable>
+    </Resource>
+    <Resource Include="Images\MainMenu\Driver_32.png">
+      <Localizable>False</Localizable>
+    </Resource>
+    <Resource Include="Images\MainMenu\Gadget_32.png">
+      <Localizable>False</Localizable>
+    </Resource>
+    <Resource Include="Images\MainMenu\Lang_32.png">
+      <Localizable>False</Localizable>
+    </Resource>
+    <Resource Include="Images\MainMenu\Merge_32.png">
+      <Localizable>False</Localizable>
+    </Resource>
+    <Resource Include="Images\MainMenu\Retrieve_32.png">
+      <Localizable>False</Localizable>
+    </Resource>
+    <Resource Include="Images\MainMenu\Silent_32.png">
+      <Localizable>False</Localizable>
+    </Resource>
+    <Resource Include="Images\MainMenu\Split_32.png">
+      <Localizable>False</Localizable>
+    </Resource>
+    <Resource Include="Images\MainMenu\Testing_32.png">
+      <Localizable>False</Localizable>
+    </Resource>
+    <Resource Include="Images\MainMenu\Themes_32.png">
+      <Localizable>False</Localizable>
+    </Resource>
+    <Resource Include="Images\MainMenu\Update_32.png">
+      <Localizable>False</Localizable>
+    </Resource>
+    <Resource Include="Images\MainMenu\VirtualBox_16.png">
+      <Localizable>False</Localizable>
+    </Resource>
+    <Resource Include="Images\MainMenu\VirtualPC_16.png">
+      <Localizable>False</Localizable>
+    </Resource>
+    <Resource Include="Images\MainMenu\VMWare_16.png">
+      <Localizable>False</Localizable>
+    </Resource>
+    <Resource Include="Images\MainMenu\Win7_32.png">
+      <Localizable>False</Localizable>
+    </Resource>
+    <Resource Include="Images\MainMenu\XPMode_16.png">
+      <Localizable>False</Localizable>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MainMenu\Firefox_16.png">
+      <Localizable>False</Localizable>
+    </Resource>
+    <Resource Include="Images\MainMenu\IE_16.png">
+      <Localizable>False</Localizable>
+    </Resource>
+    <Resource Include="Images\MainMenu\Office2007_16.png">
+      <Localizable>False</Localizable>
+    </Resource>
+    <Resource Include="Images\MainMenu\Office2010_16.png">
+      <Localizable>False</Localizable>
+    </Resource>
+    <Resource Include="Images\MainMenu\Office_32.png">
+      <Localizable>False</Localizable>
+    </Resource>
+    <Resource Include="Images\MainMenu\Opera_16.png">
+      <Localizable>False</Localizable>
+    </Resource>
+    <Resource Include="Images\MainMenu\Safari_16.png">
+      <Localizable>False</Localizable>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MainMenu\AIO_64.png">
+      <Localizable>False</Localizable>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Startup\Startup.png">
+      <Localizable>False</Localizable>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Logo_32.png">
+      <Localizable>False</Localizable>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Logo_64.png">
+      <Localizable>False</Localizable>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MainMenu\OfficeMSP_32.png">
+      <Localizable>False</Localizable>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MainMenu\Unattended_32.png">
+      <Localizable>False</Localizable>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MainMenu\AIODiskCreator_32.png">
+      <Localizable>False</Localizable>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MainMenu\WIMManager_32.png">
+      <Localizable>False</Localizable>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MainMenu\Delete_32.png">
+      <Localizable>False</Localizable>
+    </Resource>
+    <Resource Include="Images\MainMenu\RegistryEditor_32.png">
+      <Localizable>False</Localizable>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MainMenu\LangPack_16.png">
+      <Localizable>False</Localizable>
+    </Resource>
+    <Resource Include="Images\MainMenu\MSUtoCAB_16.png">
+      <Localizable>False</Localizable>
+    </Resource>
+    <Resource Include="Images\MainMenu\OfficeMSP_16.png">
+      <Localizable>False</Localizable>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MainMenu\Capture_16.png">
+      <Localizable>False</Localizable>
+    </Resource>
+    <Resource Include="Images\MainMenu\Merge_16.png">
+      <Localizable>False</Localizable>
+    </Resource>
+    <Resource Include="Images\MainMenu\Split_16.png">
+      <Localizable>False</Localizable>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MainMenu\Driver_16.png">
+      <Localizable>False</Localizable>
+    </Resource>
+    <Resource Include="Images\MainMenu\Update_16.png">
+      <Localizable>False</Localizable>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MainMenu\Advanced_32.png">
+      <Localizable>False</Localizable>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\_Global\Info_25.png">
+      <Localizable>False</Localizable>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MainMenu\ISOMaker_32.png">
+      <Localizable>False</Localizable>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MainMenu\USBPrep_32.png">
+      <Localizable>False</Localizable>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\_Global\OK_16.png">
+      <Localizable>False</Localizable>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MainMenu\Dropbox_16.png">
+      <Localizable>False</Localizable>
+    </Resource>
+    <Resource Include="Images\MainMenu\GoogleDrive_16.png">
+      <Localizable>False</Localizable>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MainMenu\Exclusive_32.png">
+      <Localizable>False</Localizable>
+    </Resource>
+    <Resource Include="Images\MainMenu\Win2012_32.png">
+      <Localizable>False</Localizable>
+    </Resource>
+    <Resource Include="Images\MainMenu\Win10_32.png">
+      <Localizable>False</Localizable>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MainMenu\Purchase_32.png">
+      <Localizable>False</Localizable>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MainMenu\Bank_16.png">
+      <Localizable>False</Localizable>
+    </Resource>
+    <Resource Include="Images\MainMenu\Paypal_16.png">
+      <Localizable>False</Localizable>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MainMenu\Win7_16.png">
+      <Localizable>False</Localizable>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ISOMaker\ISO_32.png">
+      <Localizable>False</Localizable>
+    </Resource>
+    <Resource Include="Images\ISOMaker\Save_32.png">
+      <Localizable>False</Localizable>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\_Global\Add_32.png">
+      <Localizable>False</Localizable>
+    </Resource>
+    <Resource Include="Images\_Global\Remove_32.png">
+      <Localizable>False</Localizable>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\_Global\AddFile_16.png">
+      <Localizable>False</Localizable>
+    </Resource>
+    <Resource Include="Images\_Global\AddFolder_16.png">
+      <Localizable>False</Localizable>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\_Global\DeleteAll_16.png">
+      <Localizable>False</Localizable>
+    </Resource>
+    <Resource Include="Images\_Global\Delete_16.png">
+      <Localizable>False</Localizable>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\_Global\Pause_32.png">
+      <Localizable>False</Localizable>
+    </Resource>
+    <Resource Include="Images\_Global\Start_32.png">
+      <Localizable>False</Localizable>
+    </Resource>
+    <Resource Include="Images\_Global\Stop_32.png">
+      <Localizable>False</Localizable>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\_Global\BrowseFolder_32.png">
+      <Localizable>False</Localizable>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MainMenu\Imagex_32.png" />
+    <Resource Include="Images\MainMenu\Live_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Options\Save_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Options\Reset_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\_Global\Blank_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DLL\Imaging\DISM\Microsoft.Dism.csproj">
+      <Project>{e6831090-f1c2-4619-9ab2-01d29272357a}</Project>
+      <Name>Microsoft.Dism</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DLL\ClassesDLL.csproj">
+      <Project>{635761e3-6c8f-43db-9f92-e44e112078d2}</Project>
+      <Name>ClassesDLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DLL\Imaging\Microsoft.Wim\Microsoft.Wim.csproj">
+      <Project>{2d098368-e3de-4c16-b5bd-6223a6476483}</Project>
+      <Name>Microsoft.Wim</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DLL\Imaging\Microsoft.Win32Ex\Microsoft.Win32Ex.csproj">
+      <Project>{1dd73727-9355-41cc-b701-9628730194df}</Project>
+      <Name>Microsoft.Win32Ex</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\_Global\MSUUpdateLDR_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\_Global\MSUUpdateGDR_32.png" />
+    <Resource Include="Images\_Global\MSUUpdate_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\_Global\CabUpdateGDR_32.png" />
+    <Resource Include="Images\_Global\CabUpdateLDR_32.png" />
+    <Resource Include="Images\_Global\CabUpdate_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MainMenu\Retrieve_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\_Global\Recent_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MainMenu\localization_16.png" />
+    <Resource Include="Images\MainMenu\localization_32.png" />
+    <Resource Include="Images\_Global\refresh_32.png" />
+    <Resource Include="Images\USBBoot\Eraser_32.png" />
+    <Resource Include="Images\_Global\Copy_32.png" />
+    <Resource Include="Images\_Global\Folder_16.png" />
+    <Resource Include="Images\_Global\Incompatible_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Blank.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\USBBoot\BIOS.png" />
+    <Resource Include="Images\USBBoot\FAT32.png" />
+    <Resource Include="Images\USBBoot\NTFS.png" />
+    <Resource Include="Images\USBBoot\Quick.png" />
+    <Resource Include="Images\USBBoot\UEFI.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\WIMManager\Mount_32.png" />
+    <Resource Include="Images\WIMManager\Save_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\WIMManager\delete_16.png" />
+    <Resource Include="Images\WIMManager\edit_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\WIMManager\capture_16.png" />
+    <Resource Include="Images\WIMManager\capture_32.png" />
+    <Resource Include="Images\WIMManager\delete_32.png" />
+    <Resource Include="Images\WIMManager\discard_32.png" />
+    <Resource Include="Images\WIMManager\edit_32.png" />
+    <Resource Include="Images\WIMManager\Upgrade_16.png" />
+    <Resource Include="Images\WIMManager\Upgrade_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Options\Options_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\WIMManager\export_16.png" />
+    <Resource Include="Images\WIMManager\export_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MainMenu\Win8_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\AIO\Driver_32.png" />
+    <Resource Include="Images\AIO\MSUUpdate_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\_Global\Clipboard_32.png" />
+    <Resource Include="Images\_Global\Screenshot_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Error\Error_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Error\Bundle_32.png" />
+    <Resource Include="Images\Error\XML_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Error\upload_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\_Global\PNG_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Error\Attachment_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\_Global\Info_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MainMenu\Test_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MainMenu\Main_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MainMenu\WHDownloader_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MainMenu\Latest_DVD_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MainMenu\Guides_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MainMenu\Test_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MainMenu\Upgrade_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MainMenu\License_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="WTK.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Logo_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Lic0_Free_32.png" />
+    <Resource Include="Images\Lic1_Home_32.png" />
+    <Resource Include="Images\Lic2_Pro_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MainMenu\Convert_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\WIMManager\Switch_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MainMenu\AIO_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MainMenu\AIO_16.png" />
+    <Resource Include="Images\MainMenu\RegistryEditor_16.png" />
+    <Resource Include="Images\MainMenu\WIMManager_16.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

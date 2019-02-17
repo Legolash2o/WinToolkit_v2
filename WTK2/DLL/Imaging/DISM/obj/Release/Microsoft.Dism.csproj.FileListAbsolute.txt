@@ -1,0 +1,11 @@
+E:\Win Toolkit_v2\WTK2\DLL\Imaging\DISM\bin\Release\Microsoft.Dism.xml
+E:\Win Toolkit_v2\WTK2\DLL\Imaging\DISM\bin\Release\Microsoft.Dism.dll
+E:\Win Toolkit_v2\WTK2\DLL\Imaging\DISM\bin\Release\Microsoft.Dism.pdb
+E:\Win Toolkit_v2\WTK2\DLL\Imaging\DISM\bin\Release\Microsoft.Win32Ex.dll
+E:\Win Toolkit_v2\WTK2\DLL\Imaging\DISM\bin\Release\Microsoft.Win32Ex.pdb
+E:\Win Toolkit_v2\WTK2\DLL\Imaging\DISM\bin\Release\Microsoft.Win32Ex.xml
+E:\Win Toolkit_v2\WTK2\DLL\Imaging\DISM\obj\Release\Microsoft.Dism.csprojResolveAssemblyReference.cache
+E:\Win Toolkit_v2\WTK2\DLL\Imaging\DISM\obj\Release\Microsoft.Dism.Properties.Resources.resources
+E:\Win Toolkit_v2\WTK2\DLL\Imaging\DISM\obj\Release\Microsoft.Dism.csproj.GenerateResource.Cache
+E:\Win Toolkit_v2\WTK2\DLL\Imaging\DISM\obj\Release\Microsoft.Dism.dll
+E:\Win Toolkit_v2\WTK2\DLL\Imaging\DISM\obj\Release\Microsoft.Dism.pdb

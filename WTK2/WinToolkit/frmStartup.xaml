@@ -1,0 +1,67 @@
+﻿<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="WinToolkitv2.FrmStartup"
+        Title="{DynamicResource FrmStartup-00000001}"
+        Height="58"
+        Width="288"
+        MinHeight="120"
+        
+        Loaded="FrmStartup_OnLoaded"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        Icon="Images/Logo_64.png">
+    <Window.Background>
+        <ImageBrush ImageSource="/Images/Startup/Startup.png"
+                    Stretch="Fill"
+                    RenderOptions.BitmapScalingMode="HighQuality" />
+    </Window.Background>
+    <Border BorderThickness="1" BorderBrush="Black">
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Label Grid.Row="0"
+               Grid.Column="0"
+               Grid.ColumnSpan="2"
+               Content="Legolash2o"
+               HorizontalAlignment="Right"
+             
+               FontSize="15" />
+
+        <Image Grid.Row="1"
+               Grid.Column="0"
+               Margin="30,0,0,0"
+               Source="/Images/Logo_48.png"
+               Stretch="None"
+               VerticalAlignment="Center"
+               HorizontalAlignment="Right"
+               RenderOptions.BitmapScalingMode="HighQuality" />
+          <Label Content="Win Toolkit"
+               Grid.Row="1"
+               Grid.Column="1"
+                 HorizontalAlignment="Left"
+                   VerticalContentAlignment="Center"
+                   VerticalAlignment="Center"
+                   FontSize="30"
+                  />
+       
+        <ProgressBar x:Name="pbProgress"
+                     Grid.Row="2"
+                     Grid.Column="0"
+                     Margin="10,0,10,0"
+                     Grid.ColumnSpan="2"
+                     Height="8"
+                     Value="0"
+                     VerticalAlignment="Center" />
+
+    </Grid>
+    </Border>
+</Window>

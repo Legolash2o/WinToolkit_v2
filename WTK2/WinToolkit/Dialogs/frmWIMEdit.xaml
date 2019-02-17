@@ -1,0 +1,80 @@
+﻿<Window x:Class="WinToolkitv2.Dialogs.frmWIMEdit"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="WIM Edit"
+        ResizeMode="NoResize"
+        Icon="../Images/WIMManager/edit_32.png"
+        WindowStartupLocation="CenterScreen"
+        MinHeight="260"
+        SizeToContent="Height"
+        Width="400">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="0" Grid.Column="0" x:Name="lblImageName" Content="N/A" Margin="5,5,5,5" FontWeight="SemiBold" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <TextBlock Grid.Row="1" Grid.Column="0" x:Name="lblWIMPath" Margin="5,5,5,10" Text="N/A" VerticalAlignment="Center" HorizontalAlignment="Center" />
+        <Grid Grid.Row="2">
+            <Grid.RowDefinitions >
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            
+            <Label Content="Image Name" Grid.Row="0" Grid.Column="0" HorizontalContentAlignment="Right" FontWeight="SemiBold" />
+            <TextBox x:Name="txtImageName" Grid.Row="0" Grid.Column="1" Margin="0,0,10,0" VerticalContentAlignment="Center"/>
+
+            <Label Content="Image Description" Grid.Row="1" Grid.Column="0" HorizontalContentAlignment="Right" FontWeight="SemiBold" />
+            <TextBox x:Name="txtImageDesc" Grid.Row="1" Grid.Column="1" Margin="0,0,10,0" VerticalContentAlignment="Center" />
+
+            <Label Content="Display Name"
+                   Grid.Row="2"
+                   Grid.Column="0"
+                   HorizontalContentAlignment="Right"
+                   FontWeight="SemiBold" />
+            <TextBox x:Name="txtImageDName"
+                     Grid.Row="2"
+                     Grid.Column="1"
+                     Margin="0,0,10,0" VerticalContentAlignment="Center" />
+
+            <Label Content="Display Description"
+                   Grid.Row="3"
+                   Grid.Column="0"
+                   HorizontalContentAlignment="Right"
+                   FontWeight="SemiBold" />
+            <TextBox x:Name="txtImageDDesc"
+                     Grid.Row="3"
+                     Grid.Column="1"
+                     Margin="0,0,10,0" VerticalContentAlignment="Center" />
+
+            <Label Content="Flag"
+                   Grid.Row="4"
+                   Grid.Column="0"
+                   HorizontalContentAlignment="Right"
+                   FontWeight="SemiBold" />
+            <ComboBox x:Name="cboFlag"
+                     Grid.Row="4"
+                     Grid.Column="1"
+                     Margin="0,0,10,0"
+                      VerticalContentAlignment="Center"
+                      IsEditable="True" />
+            
+            
+        </Grid>
+        <Button Grid.Row="3"
+                Grid.Column="0"
+                Margin="5,10,5,5"
+                IsEnabled="False"
+                Content="Save" />
+    </Grid>
+</Window>

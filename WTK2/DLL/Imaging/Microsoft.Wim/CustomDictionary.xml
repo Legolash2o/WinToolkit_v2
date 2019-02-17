@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Dictionary>
+  <Words>
+    <Recognized>
+      <Word>Acl</Word>
+      <Word>Api</Word>
+      <Word>Dir</Word>
+      <Word>Unmount</Word>
+      <Word>Wim</Word>
+      <Word>Wimg</Word>
+    </Recognized>
+  </Words>
+  <Acronyms>
+    <CasingExceptions>
+      <Acronym>WIM</Acronym>
+    </CasingExceptions>
+  </Acronyms>
+</Dictionary>

@@ -65,40 +65,9 @@ namespace WinToolkitv2
                 Left = Left - ((Width - MinWidth) / 2);
             }
 
-            switch (Product.Mode)
-            {
-
-                case ProductMode.Home:
-                    lblLicense.Content = "Home";
-                    imgLicense.Source = (ImageSource)FindResource("Lic1Home");
-                    scLicense.ToolTip = "You have access to extended features.";
-                    break;
-                case ProductMode.Pro:
-                    lblLicense.Content = "Professional";
-                    imgLicense.Source = (ImageSource)FindResource("Lic2Pro");
-                    scLicense.ToolTip = "You have access to all features.";
-                    break;
-                case ProductMode.Debugger:
-                    lblLicense.Content = "Debugger";
-                    imgLicense.Source = (ImageSource)FindResource("LicTesting");
-                    scLicense.ToolTip = "You have access to experimental features.";
-                    break;
-
-                default:
-                    lblLicense.Content = "Free";
-                    scLicense.ToolTip = "You have access to only basic features.";
-                    break;
-            }
-
             lblVersion.Content = OS.WinToolkit.WinToolkitVersion;
             lblDLLVersion.Content = OS.WinToolkit.DllVersion;
             chkShowAdvanced.IsChecked = Options.MainMenuAdvanced;
-
-            if (Debugger.IsAttached || Product.Mode == ProductMode.Debugger)
-            {
-                BtnTestArea.Visibility = Visibility.Visible;
-                BtnLocalizion.Visibility = Visibility.Visible;
-            }
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -145,17 +114,12 @@ namespace WinToolkitv2
         {
             Processes.OpenLink("http://www.wincert.net/forum/topic/8822-tools-manager/");
         }
-
-        private void BtnCheckForUpdate_OnClick(object sender, RoutedEventArgs e)
-        {
-            Processes.OpenLink("http://testing.wintoolkit.co.uk");
-        }
+      
 
         private void BtnReportBug_OnClick(object sender, RoutedEventArgs e)
         {
             Processes.OpenLink(
-                "http://www.wincert.net/forum/index.php?app=forums&module=post&section=post&do=new_post&f=209",
-                false);
+                "http://www.wincert.net/forum/index.php?app=forums&module=post&section=post&do=new_post&f=209");
         }
 
         private void BtnVisitForum_OnClick(object sender, RoutedEventArgs e)
@@ -168,28 +132,6 @@ namespace WinToolkitv2
             Processes.OpenLink("http://www.wincert.net/forum/forum/192-win-toolkit-guides/");
         }
 
-        private void BtnDonatePaypal_OnClick(object sender, RoutedEventArgs e)
-        {
-            Processes.OpenLink(
-                "http://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=liamc70@gmail.com&on0=Created By&os0=Legolash2o&item_name=WinToolkit Donation&quantity=1&no_shipping=1&tax=0&currency_code=GBP&return=http://www.wincert.net/forum/forum/179-win-toolkit/&cancel_return=http://www.wincert.net/forum/forum/179-win-toolkit/",
-                false);
-        }
-
-        private void BtnDonateBank_OnClick(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                Clipboard.Clear();
-                Clipboard.SetText("To: Liam Crozier (UK)" + Environment.NewLine + Environment.NewLine +
-                                  "Bank:\nHSBC Bank Plc\n7 Westgate\nBridlington\nYO16 4QD" + Environment.NewLine +
-                                  Environment.NewLine + "IBAN: GB94MIDL40132701401971\nBIC: MIDLGB2121P");
-                MessageBox.Show(Localization.GetString(GetType().Name, 1), Localization.GetString(GetType().Name, 2));
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error copying to clipboard.");
-            }
-        }
 
         private void BtnISOMaker_OnClick(object sender, RoutedEventArgs e)
         {
@@ -274,11 +216,6 @@ namespace WinToolkitv2
         }
 
 
-
-        private void BtnExclusive_OnClick(object sender, RoutedEventArgs e)
-        {
-            Processes.OpenLink("http://downloads.wintoolkit.co.uk");
-        }
 
         private void BtnBuyWin10_OnClick(object sender, RoutedEventArgs e)
         {
@@ -397,18 +334,8 @@ namespace WinToolkitv2
             Processes.OpenLink(
                 "http://heidoc.net/joomla/technology-science/microsoft/51-office-2007-direct-download-links");
         }
+        
 
-
-
-        private void BtnVisitFacebook_OnClick(object sender, RoutedEventArgs e)
-        {
-            Processes.OpenLink("http://www.facebook.com/WinToolkit");
-        }
-
-        private void BtnVisitBlog_OnClick(object sender, RoutedEventArgs e)
-        {
-            Processes.OpenLink("http://liamcrozier.wordpress.com/");
-        }
 
         private void BtnISOServer2012_OnClick(object sender, RoutedEventArgs e)
         {

@@ -280,34 +280,7 @@ namespace WinToolkitDLL
 
         public static class WinToolkit
         {
-            private const int KeyAmount = 500;
-            private const int KeySeed = 654926301; //434567435
-
-            /// <summary>
-            ///     Returns whether or not the user has a valid key.
-            /// </summary>
-            public static bool ValidKey
-            {
-                get
-                {
-                    var cKey = Reg.GetValue(Registry.LocalMachine, "Software\\WinToolkit", "Key");
-                    if (string.IsNullOrWhiteSpace(cKey)) return false;
-
-                    for (var i = 0; i < KeyAmount; i++)
-                    {
-                        var nKey = new Random(KeySeed).Next(100000000, 1000000000).ToString("000-000-000");
-
-                        //Key is valid.
-                        if (cKey.EqualsIgnoreCase(nKey))
-                        {
-                            return true;
-                        }
-                    }
-
-                    //The key is not valid.
-                    return false;
-                }
-            }
+          
 
             /// <summary>
             ///     Retrieves the version of the DLL version

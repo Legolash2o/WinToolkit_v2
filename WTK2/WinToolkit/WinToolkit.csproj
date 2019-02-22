@@ -140,7 +140,6 @@
       <DependentUpon>frmUSBPrep.xaml</DependentUpon>
     </Compile>
     <Compile Include="_Code\Exceptions.cs" />
-    <Compile Include="_Code\License.cs" />
     <Compile Include="_Code\Localization.cs" />
     <Compile Include="frmAllInOne.xaml.cs">
       <DependentUpon>frmAllInOne.xaml</DependentUpon>
@@ -176,6 +175,7 @@
     <Page Include="Lang\en-US.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Page>
     <Page Include="frmISOMaker.xaml">
       <SubType>Designer</SubType>

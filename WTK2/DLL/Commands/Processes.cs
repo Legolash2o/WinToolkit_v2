@@ -227,13 +227,8 @@ namespace WinToolkitDLL.Commands
         /// </summary>
         /// <param name="webSite">The website URL.</param>
         /// <param name="showAdFly">Should adverts be shown.</param>
-        public static void OpenLink(string webSite, bool showAdFly = true)
+        public static void OpenLink(string webSite)
         {
-            if (!webSite.ContainsIgnoreCase("ADF.LY") && showAdFly && !OS.WinToolkit.ValidKey)
-            {
-                webSite = "http://adf.ly/1964538/" + webSite;
-            }
-
             webSite = webSite.Replace(" ", "%20");
 
             try

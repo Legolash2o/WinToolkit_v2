@@ -34,32 +34,6 @@
             <Ribbon.HelpPaneContent>
                 <StackPanel Orientation="Horizontal">
                  <Label Content="Created by Legolash2o" FontSize="10"/>
-                    <RibbonMenuButton SmallImageSource="/Images/MainMenu/Donate_16.png"
-                                      ToolTipImageSource="/Images/MainMenu/Donate_16.png"
-                                      ToolTipDescription="{DynamicResource FrmMain-00000006}"
-                                      ToolTipTitle="{DynamicResource FrmMain-00000007}">
-                        <RibbonMenuItem Header="PayPal"
-                                        ImageSource="/Images/MainMenu/Paypal_16.png"
-                                        Click="BtnDonatePaypal_OnClick" />
-                        <RibbonMenuItem Header="IBAN / BIC / SWIFT"
-                                        ImageSource="/Images/MainMenu/Bank_16.png"
-                                        Click="BtnDonateBank_OnClick" />
-                    </RibbonMenuButton>
-                    <RibbonButton x:Name="btnVisitFacebook"
-                                  Visibility="Collapsed"
-                                  SmallImageSource="/Images/MainMenu/Facebook_16.png"
-                                  ToolTipImageSource="/Images/MainMenu/Facebook_16.png"
-                                  ToolTipDescription="{DynamicResource FrmMain-00000008}"
-                                  ToolTipTitle="Win Toolkit Facebook"
-                                  Click="BtnVisitFacebook_OnClick" />
-                    <RibbonButton x:Name="btnVisitBlog"
-                                  Visibility="Collapsed"
-                                  SmallImageSource="/Images/MainMenu/Blog_16.png"
-                                  ToolTipImageSource="/Images/MainMenu/Blog_16.png"
-                                  ToolTipDescription="{DynamicResource FrmMain-00000009}"
-                                  ToolTipTitle="{DynamicResource FrmMain-00000010}"
-                                  Click="BtnVisitBlog_OnClick" />
-                    
 
                     <!--<RibbonButton SmallImageSource="/Images/MainMenu/ISOMaker_16.png"
                                   ToolTipImageSource="/Images/MainMenu/ISOMaker_16.png"
@@ -108,16 +82,6 @@
             <RibbonTab Header="{DynamicResource Global-00000036}"
                        KeyTip="M">
                 <RibbonGroup Header="{DynamicResource Global-00000036}">
-                    <RibbonButton x:Name="btnCheckForUpdate"
-                                  Click="BtnCheckForUpdate_OnClick"
-                                  Label="{DynamicResource FrmMain-00000018}"
-                                  LargeImageSource="/Images/MainMenu/WTUpdate_32.png"
-                                  ToolTipImageSource="/Images/MainMenu/WTUpdate_32.png"
-                                  ToolTipDescription="{DynamicResource FrmMain-00000019}"
-                                  ToolTipTitle="{DynamicResource FrmMain-00000018}"
-                                  ToolTipFooterImageSource="/Images/_Global/OK_25.png"
-                                  ToolTipFooterDescription="{DynamicResource FrmMain-00000020}"
-                                  ToolTipFooterTitle="{DynamicResource FrmMain-00000005}" />
                     <RibbonButton x:Name="btnOptions"
                                   Click="BtnOptions_OnClick"
                                   Label="{DynamicResource FrmOptions-00000000}"
@@ -132,20 +96,7 @@
                                   ToolTipImageSource="/Images/MainMenu/localization_32.png"
                                   ToolTipDescription="{DynamicResource FrmMain-00000110}"
                                   ToolTipTitle="{DynamicResource FrmMain-00000113}" />
-                    <RibbonMenuButton Label="{DynamicResource FrmMain-00000082}"
-                                      LargeImageSource="/Images/MainMenu/Donate_32.png"
-                                     ToolTipImageSource="/Images/MainMenu/Donate_32.png"
-                                     ToolTipDescription="{DynamicResource FrmMain-00000006}"
-                                      ToolTipTitle="{DynamicResource FrmMain-00000007}">
-                        <RibbonMenuItem x:Name="btnDonatePaypal"
-                                        Header="PayPal"
-                                        ImageSource="/Images/MainMenu/Paypal_16.png"
-                                        Click="BtnDonatePaypal_OnClick" />
-                        <RibbonMenuItem x:Name="btnDonateBank"
-                                        Header="IBAN / BIC / SWIFT"
-                                        ImageSource="/Images/MainMenu/Bank_16.png"
-                                        Click="BtnDonateBank_OnClick" />
-                    </RibbonMenuButton>
+                   
                 </RibbonGroup>
                 <RibbonGroup Header="{DynamicResource FrmMain-00000003}">
                     <RibbonButton x:Name="btnVisitForum"
@@ -504,18 +455,6 @@
                                         Click="BtnISOServer2012E_OnClick" />
                     </RibbonMenuButton>
                 </RibbonGroup>
-
-                <RibbonGroup Header="{DynamicResource FrmMain-00000091}"
-                             x:Name="btnExclusive">
-                    <RibbonButton Label="{DynamicResource FrmMain-00000107}"
-                                  LargeImageSource="/Images/MainMenu/Exclusive_32.png"
-                                  ToolTipImageSource="/Images/MainMenu/Exclusive_32.png"
-                                  ToolTipTitle="{DynamicResource FrmMain-00000107}"
-                                  ToolTipDescription="{DynamicResource FrmMain-00000106}"
-                                  ToolTipFooterTitle="{DynamicResource FrmMain-00000081}"
-                                  ToolTipFooterImageSource="/Images/_Global/Warning_25.png"
-                                  Click="BtnExclusive_OnClick" />
-                </RibbonGroup>
             </RibbonTab>
             
             <RibbonTab Header="About">
@@ -566,18 +505,7 @@
                     </Grid>
                  
                 </RibbonGroup>
-                <RibbonGroup Header="Licensing">
-                    <StackPanel x:Name="scLicense" Orientation="Vertical" Margin="0,5,10,0">
-                        <Image x:Name="imgLicense" Source="Images/Lic0_Free_32.png" />
-                        <Label x:Name="lblLicense" Content="Pro"/>
-                    </StackPanel>
-                    
-                    <RibbonButton Label="Enter Key" IsEnabled="False"
-                                  LargeImageSource="Images/MainMenu/License_32.png" />
-                    <RibbonButton Label="Purchase License" IsEnabled="False"
-                                  LargeImageSource="Images/MainMenu/Upgrade_32.png" />
-               
-                </RibbonGroup>
+             
             </RibbonTab>
         </Ribbon>
 

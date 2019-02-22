@@ -52,7 +52,8 @@
     <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>Main.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="PresentationCore" />
@@ -129,7 +130,6 @@
     <Compile Include="Objects\WimImage\_WimImage.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Main.pfx" />
     <None Include="Resources\BIOS.com" />
     <None Include="Resources\exe2cab.exe" />
   </ItemGroup>

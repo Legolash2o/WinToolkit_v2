@@ -39,32 +39,7 @@ namespace WinToolkitv2
         {
             Reg.RestoreAutoPlay();
         }
-
-        private void GetLicense()
-        {
-            Product.SetMode( ProductMode.Pro);
-            //try
-            //{
-            //    Debugger.Log(0, "Startup", "Finding License...");
-
-            //    string key = "000-000-001";
-            //    System.Net.WebClient wc = new System.Net.WebClient();
-            //    wc.Headers.Add("User-Agent", "WinToolkit-1357924680");
-            //    byte[] raw = wc.DownloadData("http://www.wintoolkit.co.uk/License/Check/" + key);
-
-            //    string webData = System.Text.Encoding.UTF8.GetString(raw);
-            //    string plaintext = Encryption.Decrypt(webData);
-
-            //    LicenseDetails license = JsonConvert.DeserializeObject<LicenseDetails>(plaintext);
-            //    Product.SetMode(license.License.Edition);
-            //}
-            //catch (Exception ex)
-            //{
-            //    Exceptions.CustomException ce = new Exceptions.CustomException(Priority.Highest, "Startup: Licence Server", ex);
-            //    ce.Show();
-
-            //}
-        }
+       
 
         private void LoadDism()
         {
@@ -102,7 +77,6 @@ namespace WinToolkitv2
             {
                 tasks.Add(Task.Factory.StartNew(LoadDism));
                 tasks.Add(Task.Factory.StartNew(LoadUpdateCache));
-                tasks.Add(Task.Factory.StartNew(GetLicense));
             }
             catch (Exception)
             {

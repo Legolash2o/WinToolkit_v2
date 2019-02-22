@@ -73,7 +73,7 @@ namespace WinToolkitv2.Dialogs
 
         private void BtnForum_OnClick(object sender, RoutedEventArgs e)
         {
-            Processes.OpenLink("http://www.wincert.net/forum/index.php?app=forums&module=post&section=post&do=new_post&f=213", false);
+            Processes.OpenLink("http://www.wincert.net/forum/index.php?app=forums&module=post&section=post&do=new_post&f=213");
         }
 
         private void BtnSaveXMLAs_OnClick(object sender, RoutedEventArgs e)
